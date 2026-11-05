@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     keywords: post.tags,
     image: post.image,
     type: "article",
-    publishedTime: post.date,
+    publishedTime: post.publishDate || post.date,
   });
 }
 
@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-[#C8A45D]" />
-                <span>{post.date}</span>
+                <span>{post.publishDate || post.date}</span>
               </span>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-[#C8A45D]" />
@@ -116,7 +116,63 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
 
           <div className="space-y-6 text-neutral-700 leading-relaxed text-base sm:text-lg font-light">
-            {post.content.map((paragraph, index) => {
+            {post.introduction && (
+              <p className="whitespace-pre-line leading-relaxed">
+                {post.introduction}
+              </p>
+            )}
+
+            {post.sections && post.sections.map((section, sIndex) => (
+              <div key={sIndex} className="pt-6 space-y-4">
+                <h2 className="text-2xl font-light font-serif text-[#171717] tracking-tight">
+                  {section.heading}
+                </h2>
+                <p className="whitespace-pre-line leading-relaxed">
+                  {section.content}
+                </p>
+
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base">
+                    {section.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.subsections && section.subsections.length > 0 && (
+                  <div className="grid gap-4 pt-2">
+                    {section.subsections.map((sub, subIdx) => (
+                      <div key={subIdx} className="p-4 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs">
+                        <h3 className="text-base font-semibold text-[#171717] mb-1">
+                          {sub.title}
+                        </h3>
+                        <p className="text-sm text-neutral-600 font-light leading-relaxed">
+                          {sub.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+              <div className="p-6 bg-[#FAF9F6] border-l-4 border-[#C8A45D] border border-[#EAEAEA] rounded-xs space-y-3 mt-8">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-[#C8A45D]">
+                  Key Takeaways
+                </h3>
+                <ul className="space-y-2 text-sm text-neutral-700">
+                  {post.keyTakeaways.map((item, kIdx) => (
+                    <li key={kIdx} className="flex items-start gap-2">
+                      <span className="text-[#C8A45D] font-bold">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {post.content && post.content.map((paragraph, index) => {
               const isHeading =
                 paragraph.startsWith("1.") ||
                 paragraph.startsWith("2.") ||

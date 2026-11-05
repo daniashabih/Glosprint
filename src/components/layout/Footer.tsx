@@ -79,9 +79,52 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+            {/* Brand Pillars */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              {companyInfo.brandPillars.slice(0, 4).map((pillar, idx) => (
+                <span
+                  key={idx}
+                  className="text-[11px] font-medium bg-white border border-[#EAEAEA] text-neutral-600 px-2.5 py-1 rounded-xs"
+                >
+                  {pillar}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Products */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#171717] mb-5 border-b border-[#C8A45D]/40 pb-2 inline-block">
+              Products
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {footerLinks.products.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-neutral-600 hover:text-[#C8A45D] transition-colors">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Capabilities */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#171717] mb-5 border-b border-[#C8A45D]/40 pb-2 inline-block">
+              Capabilities
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {footerLinks.capabilities.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-neutral-600 hover:text-[#C8A45D] transition-colors">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company & Quote */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#171717] mb-5 border-b border-[#C8A45D]/40 pb-2 inline-block">
               Company
@@ -95,55 +138,26 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Core Services */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#171717] mb-5 border-b border-[#C8A45D]/40 pb-2 inline-block">
-              Print Services
-            </h3>
-            <ul className="space-y-3 text-sm">
-              {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-neutral-600 hover:text-[#C8A45D] transition-colors">
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Specialty Solutions */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#171717] mb-5 border-b border-[#C8A45D]/40 pb-2 inline-block">
-              Specialties
-            </h3>
-            <ul className="space-y-3 text-sm">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-neutral-600 hover:text-[#C8A45D] transition-colors">
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-6 pt-4 border-t border-[#EAEAEA]">
+              <Link
+                href="/request-quote"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#C8A45D] hover:text-[#B59148] transition-colors"
+              >
+                <span>Interactive Quote Estimator</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Sub-Footer */}
-      <div className="border-t border-[#EAEAEA] bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <div>
-            © {currentYear} {companyInfo.legalName}. All rights reserved. Registered in Dubai, UAE.
-          </div>
-          <div className="flex items-center gap-6">
-            <span className="text-[#C8A45D] font-medium">{companyInfo.tagline}</span>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-[#171717] transition-colors">
-              Support & Inquiries
-            </Link>
-          </div>
+      {/* Bottom Legal Bar */}
+      <div className="border-t border-[#EAEAEA] py-6 text-xs text-neutral-500 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© {currentYear} {companyInfo.legalName}. All rights reserved.</p>
+          <p className="text-neutral-400">
+            Registered commercial & luxury printing atelier in Dubai, United Arab Emirates.
+          </p>
         </div>
       </div>
     </footer>
