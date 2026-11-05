@@ -10,7 +10,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service, priority = false }: ServiceCardProps) {
   return (
-    <div className="group flex flex-col bg-[#191919] border border-[#2B2B2B] rounded-xs overflow-hidden transition-all duration-300 hover:bg-[#202020] hover:border-[#C8A45D] hover:shadow-2xl hover:shadow-black/60">
+    <div className="group flex flex-col bg-[#191919] border border-[#2B2B2B] rounded-xs overflow-hidden transition-all duration-300 hover:bg-[#202020] hover:border-[#C8A45D] hover:shadow-xl">
       {/* Service Image Container */}
       <div className="relative aspect-[16/10] overflow-hidden bg-[#101010]">
         <Image
@@ -21,7 +21,7 @@ export default function ServiceCard({ service, priority = false }: ServiceCardPr
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
 
         <div className="absolute top-4 left-4">
           <span className="inline-block px-2.5 py-1 bg-[#080808]/90 backdrop-blur-xs text-[11px] font-semibold uppercase tracking-wider text-white rounded-xs border border-[#2B2B2B]">
@@ -45,7 +45,7 @@ export default function ServiceCard({ service, priority = false }: ServiceCardPr
 
         {/* Specs and Embellishments */}
         <div className="pt-3 border-t border-[#2B2B2B] space-y-2.5">
-          <div className="flex items-center justify-between text-xs text-[#858585]">
+          <div className="flex items-center justify-between text-xs text-[#B3B3B3]">
             <span className="flex items-center gap-1">
               <Clock className="w-3.5 h-3.5 text-[#C8A45D]" />
               <span>{service.turnaround}</span>
@@ -86,7 +86,7 @@ export default function ServiceCard({ service, priority = false }: ServiceCardPr
 
           <Link
             href={`/request-a-quote?service=${encodeURIComponent(service.name)}`}
-            className="text-xs text-[#C8A45D] hover:text-[#DFCA95] hover:underline font-medium"
+            className="text-xs text-[#C8A45D] hover:underline font-medium"
           >
             Request Quote
           </Link>

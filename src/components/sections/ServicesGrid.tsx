@@ -13,7 +13,7 @@ export default function ServicesGrid({ limit = 6, showAllLink = true }: Services
   const displayServices = limit ? services.slice(0, limit) : services;
 
   return (
-    <section className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B]">
+    <section className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           overline="Our Printing Expertise"

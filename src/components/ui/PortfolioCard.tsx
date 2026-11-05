@@ -9,7 +9,7 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard({ item }: PortfolioCardProps) {
   return (
-    <div className="group flex flex-col bg-[#191919] border border-[#2B2B2B] rounded-xs overflow-hidden transition-all duration-300 hover:bg-[#202020] hover:border-[#C8A45D] hover:shadow-2xl hover:shadow-black/60">
+    <div className="group flex flex-col bg-[#191919] border border-[#2B2B2B] rounded-xs overflow-hidden transition-all duration-300 hover:bg-[#202020] hover:border-[#C8A45D] hover:shadow-xl">
       {/* Image Preview Container */}
       <div className="relative aspect-16/10 overflow-hidden bg-[#101010]">
         <Image
@@ -19,7 +19,7 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
 
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
           <span className="px-3 py-1 bg-[#080808]/90 backdrop-blur-xs text-[11px] font-semibold uppercase tracking-wider text-white rounded-xs border border-[#2B2B2B]">
@@ -78,7 +78,7 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
         <div className="pt-2">
           <Link
             href={`/request-a-quote?product=${encodeURIComponent(item.title)}`}
-            className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 border border-[#2B2B2B] hover:border-[#C8A45D] hover:text-[#C8A45D] text-white text-xs font-semibold uppercase tracking-wider transition-colors rounded-xs bg-[#141414] hover:bg-[#191919]"
+            className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 border border-[#2B2B2B] hover:border-[#C8A45D] hover:text-[#C8A45D] text-white text-xs font-semibold uppercase tracking-wider transition-colors rounded-xs bg-[#141414] hover:bg-[#202020]"
           >
             <span>Request Similar Specifications</span>
             <ArrowRight className="w-3.5 h-3.5" />

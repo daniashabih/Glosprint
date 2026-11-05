@@ -18,7 +18,7 @@ export default function Hero() {
           {/* Left Column: Headlines & Action */}
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
             {/* Prestige Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xs bg-[#191919] border border-[#C8A45D]/50 text-[#DFCA95] text-xs font-semibold uppercase tracking-[0.2em]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xs bg-[#191919] border border-[#C8A45D]/40 text-[#DFCA95] text-xs font-semibold uppercase tracking-[0.2em] shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#C8A45D]" />
               <span>Premium Printing Solutions &amp; Creative Branding</span>
             </div>
@@ -50,7 +50,7 @@ export default function Hero() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-4 text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/30 hover:bg-emerald-900/40 border border-emerald-800/60 rounded-xs transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-4 text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/30 hover:bg-emerald-900/40 border border-emerald-800/60 rounded-xs transition-colors shadow-xs"
                 aria-label="Direct WhatsApp Consultation"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-400" />

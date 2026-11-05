@@ -34,8 +34,8 @@ export default function FaqAccordion({ faqs, allowMultiple = false }: FaqAccordi
             key={index}
             className={`border rounded-xs transition-all duration-300 overflow-hidden ${
               isOpen
-                ? "border-[#C8A45D] bg-[#F7F7F9] dark:bg-[#1C1F26] shadow-md ring-1 ring-[#C8A45D]/40"
-                : "border-[#E5E5E5] dark:border-[#30333B] bg-white dark:bg-[#1C1F26] hover:border-[#C8A45D] dark:hover:border-[#C8A45D]"
+                ? "border-[#C8A45D] bg-[#202020] shadow-md ring-1 ring-[#C8A45D]/40"
+                : "border-[#2B2B2B] bg-[#191919] hover:bg-[#202020] hover:border-[#C8A45D]"
             }`}
           >
             <button
@@ -49,10 +49,10 @@ export default function FaqAccordion({ faqs, allowMultiple = false }: FaqAccordi
               <span className="flex items-start gap-3">
                 <HelpCircle
                   className={`w-5 h-5 shrink-0 mt-0.5 transition-colors ${
-                    isOpen ? "text-[#C8A45D]" : "text-[#888888] dark:text-[#71717A]"
+                    isOpen ? "text-[#C8A45D]" : "text-[#858585]"
                   }`}
                 />
-                <span className="text-base font-semibold text-[#171717] dark:text-white font-serif leading-snug">
+                <span className="text-base font-semibold text-white font-serif leading-snug">
                   {faq.question}
                 </span>
               </span>
@@ -60,8 +60,8 @@ export default function FaqAccordion({ faqs, allowMultiple = false }: FaqAccordi
               <span
                 className={`w-7 h-7 rounded-xs flex items-center justify-center shrink-0 border transition-all duration-300 ${
                   isOpen
-                    ? "bg-[#C8A45D] text-[#101114] border-[#C8A45D] rotate-180 shadow-xs"
-                    : "bg-[#F7F7F9] dark:bg-[#181A20] text-[#666666] dark:text-[#A1A1AA] border-[#E5E5E5] dark:border-[#30333B]"
+                    ? "bg-[#C8A45D] text-[#080808] border-[#C8A45D] rotate-180 shadow-xs"
+                    : "bg-[#141414] text-[#B3B3B3] border-[#2B2B2B]"
                 }`}
               >
                 <ChevronDown className="w-4 h-4" />
@@ -73,7 +73,7 @@ export default function FaqAccordion({ faqs, allowMultiple = false }: FaqAccordi
                 id={contentId}
                 role="region"
                 aria-labelledby={headerId}
-                className="px-6 pb-6 pt-3 text-sm text-[#666666] dark:text-[#A1A1AA] font-light leading-relaxed border-t border-[#E5E5E5] dark:border-[#30333B] ml-8"
+                className="px-6 pb-6 pt-3 text-sm text-[#B3B3B3] font-light leading-relaxed border-t border-[#2B2B2B] ml-8"
               >
                 <p className="whitespace-pre-line">{faq.answer}</p>
               </div>

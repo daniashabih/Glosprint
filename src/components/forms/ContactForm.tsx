@@ -75,7 +75,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-[#191919] p-8 sm:p-10 border border-[#2B2B2B] rounded-xs shadow-xl space-y-6">
+    <div className="bg-[#191919] p-8 sm:p-10 border border-[#2B2B2B] rounded-xs shadow-2xl space-y-6">
       <div className="space-y-1">
         <h3 className="text-2xl font-light font-serif text-white">
           Send Us a Message
@@ -87,7 +87,7 @@ export default function ContactForm() {
 
       {/* Success Notification */}
       {submittedMethod && (
-        <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-300 text-sm">
+        <div className="p-4 bg-emerald-950/50 border border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-300 text-sm">
           <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
             <p className="font-semibold">
@@ -104,7 +104,7 @@ export default function ContactForm() {
 
       {/* Error Summary if any */}
       {Object.keys(errors).length > 0 && (
-        <div className="p-4 bg-rose-950/40 border border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-300 text-xs">
+        <div className="p-4 bg-rose-950/50 border border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-300 text-xs">
           <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
           <span>Please correct the highlighted fields below to continue.</span>
         </div>
@@ -128,7 +128,7 @@ export default function ContactForm() {
             className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
               errors.fullName
                 ? "border-rose-500 focus:border-rose-400"
-                : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
             }`}
           />
           {errors.fullName && (
@@ -154,7 +154,7 @@ export default function ContactForm() {
               className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
                 errors.email
                   ? "border-rose-500 focus:border-rose-400"
-                  : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                  : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               }`}
             />
             {errors.email && (
@@ -178,7 +178,7 @@ export default function ContactForm() {
               className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
                 errors.phone
                   ? "border-rose-500 focus:border-rose-400"
-                  : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                  : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               }`}
             />
             {errors.phone && (
@@ -195,7 +195,7 @@ export default function ContactForm() {
           <select
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30 transition-colors"
+            className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40 transition-colors"
           >
             <option value="" className="bg-[#191919] text-white">Select a service (optional)</option>
             {services.map((s) => (
@@ -224,7 +224,7 @@ export default function ContactForm() {
             className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors resize-none ${
               errors.message
                 ? "border-rose-500 focus:border-rose-400"
-                : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
             }`}
           />
           {errors.message && (
@@ -237,7 +237,7 @@ export default function ContactForm() {
           <button
             type="button"
             onClick={handleSubmitWhatsApp}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider rounded-xs hover:bg-[#20ba59] transition-all cursor-pointer shadow-sm"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider rounded-xs hover:bg-[#20ba59] transition-all cursor-pointer shadow-xs"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Send via WhatsApp</span>
@@ -246,7 +246,7 @@ export default function ContactForm() {
           <button
             type="button"
             onClick={handleSubmitMailto}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C8A45D] text-[#080808] text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#C8A45D]"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C8A45D] text-[#080808] text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#C8A45D] shadow-xs"
           >
             <Mail className="w-4 h-4" />
             <span>Send via Email</span>
@@ -254,7 +254,7 @@ export default function ContactForm() {
         </div>
 
         <p className="text-[11px] text-[#858585] text-center flex items-center justify-center gap-1.5 pt-1">
-          <AlertCircle className="w-3.5 h-3.5 text-[#858585]" />
+          <AlertCircle className="w-3.5 h-3.5 text-[#C8A45D]" />
           <span>Inquiries are securely handled via direct encrypted WhatsApp or your native email client.</span>
         </p>
       </form>

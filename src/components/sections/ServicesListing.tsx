@@ -44,7 +44,7 @@ export default function ServicesListing() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-xs transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? "bg-[#C8A45D] text-[#080808] font-bold border border-[#C8A45D] shadow-sm"
+                  ? "bg-[#C8A45D] text-[#080808] font-bold border border-[#C8A45D] shadow-xs"
                   : "bg-[#191919] text-[#B3B3B3] border border-[#2B2B2B] hover:bg-[#202020] hover:border-[#C8A45D] hover:text-white"
               }`}
             >

@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#141414] border-b border-[#2B2B2B]">
+    <section className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           overline="The GLOSPRINT Distinction"
@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
               key={pillar.title}
               className="p-8 bg-[#191919] border border-[#2B2B2B] rounded-xs transition-all duration-300 hover:bg-[#202020] hover:border-[#C8A45D] hover:shadow-xl space-y-4"
             >
-              <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#C8A45D]/30 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xs bg-[#141414] border border-[#C8A45D]/30 flex items-center justify-center">
                 {iconMap[pillar.icon]}
               </div>
 

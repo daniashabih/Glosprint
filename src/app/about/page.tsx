@@ -119,11 +119,11 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 md:py-28 bg-[#141414] border-b border-[#2B2B2B]">
+      <section className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-8 sm:p-10 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] transition-all rounded-xs space-y-4 shadow-lg">
-              <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#C8A45D]/30 flex items-center justify-center">
+            <div className="p-8 sm:p-10 bg-[#191919] hover:bg-[#202020] hover:border-[#C8A45D] border border-[#2B2B2B] transition-all rounded-xs space-y-4 shadow-lg">
+              <div className="w-12 h-12 rounded-xs bg-[#141414] border border-[#C8A45D]/30 flex items-center justify-center">
                 <HeartHandshake className="w-6 h-6 text-[#C8A45D]" />
               </div>
               <h3 className="text-2xl font-light font-serif text-white">
@@ -134,8 +134,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-8 sm:p-10 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] transition-all rounded-xs space-y-4 shadow-lg">
-              <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#C8A45D]/30 flex items-center justify-center">
+            <div className="p-8 sm:p-10 bg-[#191919] hover:bg-[#202020] hover:border-[#C8A45D] border border-[#2B2B2B] transition-all rounded-xs space-y-4 shadow-lg">
+              <div className="w-12 h-12 rounded-xs bg-[#141414] border border-[#C8A45D]/30 flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-[#C8A45D]" />
               </div>
               <h3 className="text-2xl font-light font-serif text-white">
@@ -162,9 +162,9 @@ export default function AboutPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-8 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] rounded-xs space-y-4 hover:border-[#C8A45D] transition-all shadow-lg"
+                className="p-8 bg-[#191919] border border-[#2B2B2B] rounded-xs space-y-4 hover:bg-[#202020] hover:border-[#C8A45D] transition-all shadow-md"
               >
-                <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#2B2B2B] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xs bg-[#141414] border border-[#2B2B2B] flex items-center justify-center">
                   {v.icon}
                 </div>
                 <h3 className="text-lg font-medium text-white font-serif">
@@ -180,7 +180,7 @@ export default function AboutPage() {
       </section>
 
       {/* Quality Commitment Section */}
-      <section className="py-20 md:py-28 bg-[#141414] border-b border-[#2B2B2B]">
+      <section className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">

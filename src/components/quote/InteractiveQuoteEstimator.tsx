@@ -124,7 +124,7 @@ export default function InteractiveQuoteEstimator() {
   // Validate and submit
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const validationErrors = validateQuoteForm({
+    const validationResult = validateQuoteForm({
       ...formState,
       product: formState.product || activeProduct.name,
       size: formState.size || activeSize,
@@ -132,8 +132,8 @@ export default function InteractiveQuoteEstimator() {
       finishing: formState.finishing || activeFinishing,
     });
 
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
+    if (!validationResult.isValid) {
+      setErrors(validationResult.errors);
       return;
     }
 

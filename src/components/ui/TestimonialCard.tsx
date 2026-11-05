@@ -30,7 +30,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           </h4>
           <p className="text-xs text-[#858585]">
             {testimonial.position},{" "}
-            <span className="font-medium text-[#B3B3B3]">{testimonial.company}</span>
+            <span className="font-medium text-white">{testimonial.company}</span>
           </p>
         </div>
 

@@ -13,7 +13,7 @@ export default function IndustriesSection() {
   };
 
   return (
-    <section id="industries" className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B]">
+    <section id="industries" className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           overline="Tailored UAE Solutions"
@@ -28,7 +28,7 @@ export default function IndustriesSection() {
               className="bg-[#191919] border border-[#2B2B2B] p-8 rounded-xs hover:bg-[#202020] hover:border-[#C8A45D] transition-all duration-300 hover:shadow-xl flex flex-col justify-between space-y-6"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#C8A45D]/30 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xs bg-[#141414] border border-[#C8A45D]/30 flex items-center justify-center">
                   {iconMap[ind.iconName]}
                 </div>
                 <h3 className="text-xl font-medium text-white font-serif">

@@ -26,7 +26,7 @@ export default function PortfolioGallery() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-xs transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? "bg-[#C8A45D] text-[#080808] font-bold border border-[#C8A45D] shadow-sm"
+                  ? "bg-[#C8A45D] text-[#080808] font-bold border border-[#C8A45D] shadow-xs"
                   : "bg-[#191919] text-[#B3B3B3] border border-[#2B2B2B] hover:bg-[#202020] hover:border-[#C8A45D] hover:text-white"
               }`}
             >
@@ -44,7 +44,7 @@ export default function PortfolioGallery() {
       </div>
 
       {/* Demonstration Notice */}
-      <div className="p-5 bg-[#141414] border border-[#2B2B2B] rounded-xs flex items-start gap-3 text-xs text-[#B3B3B3] leading-relaxed font-light">
+      <div className="p-5 bg-[#191919] border border-[#2B2B2B] rounded-xs flex items-start gap-3 text-xs text-[#B3B3B3] leading-relaxed font-light">
         <AlertCircle className="w-4 h-4 text-[#C8A45D] shrink-0 mt-0.5" />
         <p>
           <strong className="text-white font-medium">Demonstration Project Disclosure:</strong>{" "}

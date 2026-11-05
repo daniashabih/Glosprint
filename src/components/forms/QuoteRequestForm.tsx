@@ -82,7 +82,7 @@ export default function QuoteRequestForm() {
   };
 
   return (
-    <div className="bg-[#191919] p-8 sm:p-12 border border-[#2B2B2B] rounded-xs shadow-xl space-y-8">
+    <div className="bg-[#191919] p-8 sm:p-12 border border-[#2B2B2B] rounded-xs shadow-2xl space-y-8">
       {/* Title & Introductory Text */}
       <div className="border-b border-[#2B2B2B] pb-6 space-y-2">
         <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
@@ -97,7 +97,7 @@ export default function QuoteRequestForm() {
       </div>
 
       {lastAction && (
-        <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-300 text-sm">
+        <div className="p-4 bg-emerald-950/50 border border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-300 text-sm">
           <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
             <p className="font-semibold">
@@ -113,7 +113,7 @@ export default function QuoteRequestForm() {
       )}
 
       {Object.keys(errors).length > 0 && (
-        <div className="p-4 bg-rose-950/40 border border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-300 text-xs">
+        <div className="p-4 bg-rose-950/50 border border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-300 text-xs">
           <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
           <span>Please fill in the required contact information below.</span>
         </div>
@@ -143,7 +143,7 @@ export default function QuoteRequestForm() {
                 className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
                   errors.fullName
                     ? "border-rose-500 focus:border-rose-400"
-                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
                 }`}
               />
               {errors.fullName && <p className="mt-1 text-xs text-rose-400">{errors.fullName}</p>}
@@ -165,7 +165,7 @@ export default function QuoteRequestForm() {
                 className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
                   errors.email
                     ? "border-rose-500 focus:border-rose-400"
-                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
                 }`}
               />
               {errors.email && <p className="mt-1 text-xs text-rose-400">{errors.email}</p>}
@@ -187,7 +187,7 @@ export default function QuoteRequestForm() {
                 className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
                   errors.phone
                     ? "border-rose-500 focus:border-rose-400"
-                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
                 }`}
               />
               {errors.phone && <p className="mt-1 text-xs text-rose-400">{errors.phone}</p>}
@@ -209,7 +209,7 @@ export default function QuoteRequestForm() {
               <select
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               >
                 {services.map((s) => (
                   <option key={s.id} value={s.name} className="bg-[#191919] text-white">
@@ -229,7 +229,7 @@ export default function QuoteRequestForm() {
               <select
                 value={formData.quantity}
                 onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               >
                 <option value="50" className="bg-[#191919] text-white">50 Units</option>
                 <option value="100" className="bg-[#191919] text-white">100 Units</option>
@@ -251,7 +251,7 @@ export default function QuoteRequestForm() {
                 placeholder="e.g. Standard UAE, A4, or 25x20x10cm"
                 value={formData.size}
                 onChange={(e) => setFormData({ ...formData, size: e.target.value })}
-                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               />
             </div>
           </div>
@@ -264,7 +264,7 @@ export default function QuoteRequestForm() {
               <select
                 value={formData.paperPreference}
                 onChange={(e) => setFormData({ ...formData, paperPreference: e.target.value })}
-                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               >
                 <option value="450gsm Velvet Soft-Touch Board" className="bg-[#191919] text-white">450gsm Velvet Soft-Touch Board</option>
                 <option value="600gsm Cotton Triplex Board" className="bg-[#191919] text-white">600gsm Cotton Triplex Board</option>
@@ -285,7 +285,7 @@ export default function QuoteRequestForm() {
               <select
                 value={formData.finishingPreference}
                 onChange={(e) => setFormData({ ...formData, finishingPreference: e.target.value })}
-                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               >
                 <option value="Champagne Gold Hot Foil" className="bg-[#191919] text-white">Champagne Gold Hot Foil</option>
                 <option value="Silver Mirror Foil" className="bg-[#191919] text-white">Silver Mirror Foil</option>
@@ -305,7 +305,7 @@ export default function QuoteRequestForm() {
               <select
                 value={formData.urgency}
                 onChange={(e) => setFormData({ ...formData, urgency: e.target.value })}
-                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40"
               >
                 <option value="Standard (2-4 Days)" className="bg-[#191919] text-white">Standard (2 – 4 Days)</option>
                 <option value="Express (24-48 Hours)" className="bg-[#191919] text-white">Express (24 – 48 Hours)</option>
@@ -324,7 +324,7 @@ export default function QuoteRequestForm() {
               placeholder="Provide any additional specifications: e.g. Pantone codes, foil placement, packaging insert requirements, or multi-item suites..."
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-              className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30 resize-none"
+              className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/40 resize-none"
             />
           </div>
         </div>
@@ -335,7 +335,7 @@ export default function QuoteRequestForm() {
             <button
               type="button"
               onClick={handleSubmitWhatsApp}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-xs hover:bg-[#20ba59] transition-all cursor-pointer shadow-sm"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-xs hover:bg-[#20ba59] transition-all cursor-pointer shadow-xs"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Submit via WhatsApp (Fastest)</span>
@@ -344,7 +344,7 @@ export default function QuoteRequestForm() {
             <button
               type="button"
               onClick={handleSubmitMailto}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C8A45D] text-[#080808] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#C8A45D]"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C8A45D] text-[#080808] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#C8A45D] shadow-xs"
             >
               <Mail className="w-4 h-4" />
               <span>Submit via Email</span>

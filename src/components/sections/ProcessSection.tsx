@@ -16,7 +16,7 @@ export default function ProcessSection() {
             {printingProcess.map((step) => (
               <div
                 key={step.step}
-                className="relative flex flex-col p-6 bg-[#191919] border border-[#2B2B2B] rounded-xs transition-all duration-300 hover:border-[#C8A45D] hover:bg-[#202020] hover:shadow-xl group"
+                className="relative flex flex-col p-6 bg-[#191919] border border-[#2B2B2B] rounded-xs transition-all duration-300 hover:bg-[#202020] hover:border-[#C8A45D] hover:shadow-xl group"
               >
                 {/* Step Number Display */}
                 <div className="flex items-center justify-between mb-4">
