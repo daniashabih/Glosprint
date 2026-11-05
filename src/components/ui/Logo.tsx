@@ -14,13 +14,13 @@ export default function Logo({
 }: LogoProps) {
   // Dimensions maintain the exact ~3:1 aspect ratio of the supplied 866x288 logo
   const sizeMap = {
-    sm: { width: 140, height: 47 },
-    md: { width: 180, height: 60 },
-    lg: { width: 220, height: 73 },
-    xl: { width: 260, height: 86 },
+    sm: { width: 140, height: 47, maxH: "max-h-10" },
+    md: { width: 180, height: 60, maxH: "max-h-12 md:max-h-14" },
+    lg: { width: 220, height: 73, maxH: "max-h-14 md:max-h-16" },
+    xl: { width: 260, height: 86, maxH: "max-h-16 md:max-h-20" },
   };
 
-  const { width, height } = sizeMap[size];
+  const { width, height, maxH } = sizeMap[size];
 
   return (
     <Link
@@ -34,7 +34,7 @@ export default function Logo({
         width={width}
         height={height}
         priority={priority}
-        className="h-auto w-auto object-contain max-h-12 md:max-h-14"
+        className={`h-auto w-auto object-contain ${maxH}`}
       />
     </Link>
   );

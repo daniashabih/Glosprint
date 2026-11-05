@@ -70,6 +70,10 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
   },
+  icons: {
+    icon: "/logo/glosprint-icon.png",
+    apple: "/logo/glosprint-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -86,7 +90,7 @@ export default function RootLayout({
       className={`${jakartaSans.variable} ${playfairDisplay.variable} scroll-smooth antialiased`}
     >
       <head>
-        <link rel="icon" href="/logo/glosprint-logo.png" />
+        <link rel="icon" href="/logo/glosprint-icon.png" />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-[#171717] font-sans selection:bg-[#C8A45D]/20 selection:text-[#171717]">
         <GoogleAnalytics />
