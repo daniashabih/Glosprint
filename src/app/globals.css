@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gold: #C8A45D;
+  --gold-light: #DFCA95;
+  --gold-dark: #A6833D;
+  --gold-muted: #F8F5EC;
+  --offwhite: #FAF9F6;
+  --border-light: #EAEAEA;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-muted: var(--gold-muted);
+  --color-offwhite: var(--offwhite);
+  --color-border-light: var(--border-light);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #171717;
+}
+
+body {
+  background-color: #ffffff;
+  color: #171717;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom Luxury Gold Gradient Utilities */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #A6833D 0%, #C8A45D 50%, #DFCA95 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #A6833D 0%, #C8A45D 50%, #DFCA95 100%);
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 0 25px rgba(200, 164, 93, 0.2);
+  border-color: #C8A45D;
+}
+
+.card-luxury {
+  background: #ffffff;
+  border: 1px solid #EAEAEA;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  border-color: #C8A45D;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(200, 164, 93, 0.15);
+}
