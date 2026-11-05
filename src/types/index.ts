@@ -208,9 +208,9 @@ export interface IndustryItem {
 
 export interface ProcessStep {
   step: string;
-  number: number;
+  number?: number;
   title: string;
   description: string;
   detail: string;
-  iconName: string;
+  iconName?: string;
 }

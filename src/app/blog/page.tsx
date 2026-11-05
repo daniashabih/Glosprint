@@ -73,7 +73,7 @@ export default function BlogListingPage() {
                     <div className="flex items-center gap-4 text-xs text-neutral-500">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5 text-[#C8A45D]" />
-                        <span>{post.date}</span>
+                        <span>{post.publishDate || post.date}</span>
                       </span>
                       <span>•</span>
                       <span className="flex items-center gap-1.5">
