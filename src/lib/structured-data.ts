@@ -1,5 +1,5 @@
 import { companyInfo } from "@/data/company";
-import { FAQ, Service, BlogPost } from "@/types";
+import { FAQ, Service, BlogPost, Product } from "@/types";
 
 export function createOrganizationSchema() {
   return {
@@ -110,6 +110,35 @@ export function createBreadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
+export function createProductSchema(product: Product) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.galleryImages.map((img) =>
+      img.startsWith("http") ? img : `${companyInfo.siteUrl}${img}`
+    ),
+    description: product.shortDescription,
+    sku: product.id,
+    brand: {
+      "@type": "Brand",
+      name: companyInfo.name,
+    },
+    category: product.categoryName,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "AED",
+      price: "Contact for Quote",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
+        name: companyInfo.name,
+      },
+    },
+  };
+}
+
 export function createServiceSchema(service: Service) {
   return {
     "@context": "https://schema.org",
@@ -168,7 +197,7 @@ export function createArticleSchema(post: BlogPost) {
     headline: post.title,
     description: post.excerpt,
     image: post.image,
-    datePublished: post.date,
+    datePublished: post.publishDate,
     author: {
       "@type": "Person",
       name: post.author.name,
