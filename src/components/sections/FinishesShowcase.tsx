@@ -11,7 +11,7 @@ export default function FinishesShowcase() {
   const [selectedFinish, setSelectedFinish] = useState(premiumFinishes[0]);
 
   return (
-    <section className="py-20 md:py-28 bg-[#171717] text-white overflow-hidden relative" id="finishes">
+    <section className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B] text-white overflow-hidden relative" id="finishes">
       {/* Decorative ambient background blur */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C8A45D]/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -20,14 +20,13 @@ export default function FinishesShowcase() {
           overline="Artisanal Embellishment"
           title="The Haute-Couture Finishing Showcase"
           description="Transform ordinary cardstock into extraordinary sensory artifacts. Explore our tactile library of metallic foils, 3D relief, velvety laminations, and gilded edges."
-          light
         />
 
         {/* Interactive Finishes Gallery */}
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: Interactive Highlight Card */}
-          <div className="lg:col-span-5 bg-[#202020] border border-white/10 rounded-xs overflow-hidden shadow-2xl flex flex-col justify-between">
-            <div className="relative aspect-4/3 w-full bg-black/40 overflow-hidden">
+          <div className="lg:col-span-5 bg-[#191919] border border-[#2B2B2B] rounded-xs overflow-hidden shadow-xl flex flex-col justify-between">
+            <div className="relative aspect-4/3 w-full bg-[#101010] overflow-hidden">
               <Image
                 src={selectedFinish.image}
                 alt={selectedFinish.name}
@@ -35,7 +34,7 @@ export default function FinishesShowcase() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover object-center transition-all duration-500"
               />
-              <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-xs text-[#C8A45D] text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-xs flex items-center gap-1.5 border border-[#C8A45D]/30">
+              <div className="absolute top-3 left-3 bg-[#080808]/90 backdrop-blur-xs text-[#C8A45D] text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-xs flex items-center gap-1.5 border border-[#C8A45D]/40 shadow-xs">
                 <Sparkles className="w-3 h-3" />
                 <span>Luxury Specification</span>
               </div>
@@ -51,29 +50,29 @@ export default function FinishesShowcase() {
                 </h3>
               </div>
 
-              <p className="text-xs text-neutral-300 font-light leading-relaxed">
+              <p className="text-xs text-[#B3B3B3] font-light leading-relaxed">
                 {selectedFinish.textureDescription}
               </p>
 
-              <div className="space-y-2 pt-2 border-t border-white/10 text-xs">
+              <div className="space-y-2 pt-2 border-t border-[#2B2B2B] text-xs">
                 <div>
-                  <span className="text-neutral-400 font-light">Visual Effect: </span>
-                  <span className="text-neutral-200 font-medium">{selectedFinish.visualEffect}</span>
+                  <span className="text-[#858585] font-light">Visual Effect: </span>
+                  <span className="text-white font-medium">{selectedFinish.visualEffect}</span>
                 </div>
                 <div>
-                  <span className="text-neutral-400 font-light">Recommended For: </span>
-                  <span className="text-neutral-200 font-medium">{selectedFinish.bestFor}</span>
+                  <span className="text-[#858585] font-light">Recommended For: </span>
+                  <span className="text-white font-medium">{selectedFinish.bestFor}</span>
                 </div>
                 <div>
-                  <span className="text-neutral-400 font-light">Ideal Substrate: </span>
-                  <span className="text-neutral-200 font-medium">{selectedFinish.recommendedStock}</span>
+                  <span className="text-[#858585] font-light">Ideal Substrate: </span>
+                  <span className="text-white font-medium">{selectedFinish.recommendedStock}</span>
                 </div>
               </div>
 
               <div className="pt-2">
                 <Link
-                  href={`/request-quote?finishing=${encodeURIComponent(selectedFinish.name)}`}
-                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C8A45D] hover:text-[#e4be74] transition-colors"
+                  href={`/request-a-quote?finishing=${encodeURIComponent(selectedFinish.name)}`}
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C8A45D] hover:underline transition-colors"
                 >
                   <span>Request a Quote With This Finish</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -91,20 +90,20 @@ export default function FinishesShowcase() {
                   key={finish.id}
                   type="button"
                   onClick={() => setSelectedFinish(finish)}
-                  className={`text-left p-4 sm:p-5 rounded-xs border transition-all duration-200 group flex flex-col justify-between space-y-3 ${
+                  className={`text-left p-4 sm:p-5 rounded-xs border transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer ${
                     isSelected
-                      ? "bg-[#2A2A2A] border-[#C8A45D] shadow-lg ring-1 ring-[#C8A45D]"
-                      : "bg-[#1F1F1F] border-white/10 hover:border-white/30"
+                      ? "bg-[#202020] border-[#C8A45D] shadow-md ring-1 ring-[#C8A45D]"
+                      : "bg-[#141414] border-[#2B2B2B] hover:bg-[#191919] hover:border-[#C8A45D]/60"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span
-                      className="w-3 h-3 rounded-full shrink-0"
+                      className="w-3 h-3 rounded-full shrink-0 border border-white/20"
                       style={{ backgroundColor: finish.accentColor }}
                     />
                     <Eye
                       className={`w-3.5 h-3.5 transition-opacity ${
-                        isSelected ? "text-[#C8A45D] opacity-100" : "text-neutral-500 opacity-40 group-hover:opacity-100"
+                        isSelected ? "text-[#C8A45D] opacity-100" : "text-[#858585] opacity-50 group-hover:opacity-100"
                       }`}
                     />
                   </div>
@@ -112,12 +111,12 @@ export default function FinishesShowcase() {
                   <div>
                     <h4
                       className={`text-sm font-medium font-serif transition-colors ${
-                        isSelected ? "text-[#C8A45D]" : "text-neutral-100 group-hover:text-white"
+                        isSelected ? "text-[#C8A45D]" : "text-white group-hover:text-[#C8A45D]"
                       }`}
                     >
                       {finish.name}
                     </h4>
-                    <p className="text-[11px] text-neutral-400 font-light line-clamp-2 mt-1 leading-snug">
+                    <p className="text-[11px] text-[#B3B3B3] font-light line-clamp-2 mt-1 leading-snug">
                       {finish.visualEffect}
                     </p>
                   </div>
@@ -131,7 +130,7 @@ export default function FinishesShowcase() {
         <div className="mt-14 text-center">
           <Link
             href="/printing-capabilities"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-transparent border border-white/20 hover:border-[#C8A45D] hover:text-[#C8A45D] text-white text-xs font-semibold uppercase tracking-widest transition-all rounded-xs"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#191919] border border-[#2B2B2B] hover:bg-[#202020] hover:border-[#C8A45D] hover:text-[#C8A45D] text-white text-xs font-semibold uppercase tracking-widest transition-all rounded-xs shadow-xs"
           >
             <span>Explore All 15 Printing & Finishing Capabilities</span>
             <ArrowRight className="w-3.5 h-3.5" />

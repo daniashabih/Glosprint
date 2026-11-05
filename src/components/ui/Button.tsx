@@ -30,15 +30,15 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      "bg-[#171717] dark:bg-[#C8A45D] text-white dark:text-[#101114] hover:bg-[#C8A45D] dark:hover:bg-[#DFCA95] hover:text-[#171717] border border-[#171717] dark:border-[#C8A45D] hover:border-[#C8A45D] dark:hover:border-[#DFCA95] shadow-xs",
+      "bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] font-bold shadow-md hover:shadow-lg",
     secondary:
-      "bg-white dark:bg-[#1C1F26] text-[#171717] dark:text-white hover:bg-[#FAF9F6] dark:hover:bg-[#232732] border border-[#EAEAEA] dark:border-[#30333B] hover:border-[#C8A45D] dark:hover:border-[#DFCA95] shadow-xs",
+      "bg-[#191919] text-white hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] hover:text-[#C8A45D] shadow-xs",
     gold:
-      "bg-[#C8A45D] text-[#171717] hover:bg-[#A6833D] hover:text-white border border-[#C8A45D] font-bold shadow-md hover:shadow-lg",
+      "bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] font-bold shadow-md hover:shadow-lg",
     outline:
-      "bg-transparent text-[#171717] dark:text-neutral-200 hover:text-[#C8A45D] dark:hover:text-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] hover:bg-[#FAF9F6] dark:hover:bg-[#181A20]",
+      "bg-transparent text-white hover:text-[#C8A45D] border border-[#C8A45D] hover:border-[#DFCA95] hover:bg-[#191919]",
     ghost:
-      "bg-transparent text-[#171717] dark:text-neutral-200 hover:text-[#C8A45D] dark:hover:text-[#DFCA95] hover:bg-neutral-50 dark:hover:bg-[#181A20] border border-transparent",
+      "bg-transparent text-[#B3B3B3] hover:text-[#C8A45D] hover:bg-[#191919] border border-transparent",
   };
 
   const baseClasses =

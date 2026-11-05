@@ -82,30 +82,30 @@ export default function QuoteRequestForm() {
   };
 
   return (
-    <div className="bg-white p-8 sm:p-12 border border-[#EAEAEA] rounded-xs shadow-xs space-y-8">
+    <div className="bg-[#191919] p-8 sm:p-12 border border-[#2B2B2B] rounded-xs shadow-xl space-y-8">
       {/* Title & Introductory Text */}
-      <div className="border-b border-[#EAEAEA] pb-6 space-y-2">
+      <div className="border-b border-[#2B2B2B] pb-6 space-y-2">
         <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
           Bespoke Estimation
         </span>
-        <h2 className="text-2xl sm:text-3xl font-light font-serif text-[#171717]">
+        <h2 className="text-2xl sm:text-3xl font-light font-serif text-white">
           Request a Custom Printing Quotation
         </h2>
-        <p className="text-sm text-neutral-600 font-light leading-relaxed">
+        <p className="text-sm text-[#B3B3B3] font-light leading-relaxed">
           Specify your print requirements below. We provide fast, accurate pricing within 1 to 2 business hours during Dubai working hours.
         </p>
       </div>
 
       {lastAction && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xs flex items-start gap-3 text-emerald-800 text-sm">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+        <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-300 text-sm">
+          <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
             <p className="font-semibold">
               {lastAction === "whatsapp"
                 ? "Launching your pre-filled WhatsApp inquiry..."
                 : "Launching your pre-formatted email draft..."}
             </p>
-            <p className="text-xs text-emerald-700">
+            <p className="text-xs text-emerald-400">
               Your detailed printing parameters have been compiled. Simply press send in the opened window.
             </p>
           </div>
@@ -113,8 +113,8 @@ export default function QuoteRequestForm() {
       )}
 
       {Object.keys(errors).length > 0 && (
-        <div className="p-4 bg-rose-50 border border-rose-200 rounded-xs flex items-start gap-2.5 text-rose-800 text-xs">
-          <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+        <div className="p-4 bg-rose-950/40 border border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-300 text-xs">
+          <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
           <span>Please fill in the required contact information below.</span>
         </div>
       )}
@@ -122,13 +122,13 @@ export default function QuoteRequestForm() {
       <form className="space-y-6" noValidate>
         {/* Customer Contact Details */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-[#171717] border-l-2 border-[#C8A45D] pl-3">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white border-l-2 border-[#C8A45D] pl-3">
             1. Contact Information
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Full Name *
               </label>
               <input
@@ -140,15 +140,17 @@ export default function QuoteRequestForm() {
                   setFormData({ ...formData, fullName: e.target.value });
                   if (errors.fullName) setErrors({ ...errors, fullName: undefined });
                 }}
-                className={`w-full px-4 py-3 bg-[#FAF9F6] border rounded-xs text-sm text-[#171717] focus:outline-hidden transition-colors ${
-                  errors.fullName ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] focus:border-[#C8A45D]"
+                className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
+                  errors.fullName
+                    ? "border-rose-500 focus:border-rose-400"
+                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
                 }`}
               />
-              {errors.fullName && <p className="mt-1 text-xs text-rose-600">{errors.fullName}</p>}
+              {errors.fullName && <p className="mt-1 text-xs text-rose-400">{errors.fullName}</p>}
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Email Address *
               </label>
               <input
@@ -160,15 +162,17 @@ export default function QuoteRequestForm() {
                   setFormData({ ...formData, email: e.target.value });
                   if (errors.email) setErrors({ ...errors, email: undefined });
                 }}
-                className={`w-full px-4 py-3 bg-[#FAF9F6] border rounded-xs text-sm text-[#171717] focus:outline-hidden transition-colors ${
-                  errors.email ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] focus:border-[#C8A45D]"
+                className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
+                  errors.email
+                    ? "border-rose-500 focus:border-rose-400"
+                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
                 }`}
               />
-              {errors.email && <p className="mt-1 text-xs text-rose-600">{errors.email}</p>}
+              {errors.email && <p className="mt-1 text-xs text-rose-400">{errors.email}</p>}
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Phone / WhatsApp *
               </label>
               <input
@@ -180,64 +184,66 @@ export default function QuoteRequestForm() {
                   setFormData({ ...formData, phone: e.target.value });
                   if (errors.phone) setErrors({ ...errors, phone: undefined });
                 }}
-                className={`w-full px-4 py-3 bg-[#FAF9F6] border rounded-xs text-sm text-[#171717] focus:outline-hidden transition-colors ${
-                  errors.phone ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] focus:border-[#C8A45D]"
+                className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
+                  errors.phone
+                    ? "border-rose-500 focus:border-rose-400"
+                    : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
                 }`}
               />
-              {errors.phone && <p className="mt-1 text-xs text-rose-600">{errors.phone}</p>}
+              {errors.phone && <p className="mt-1 text-xs text-rose-400">{errors.phone}</p>}
             </div>
           </div>
         </div>
 
         {/* Project Specifics */}
-        <div className="space-y-4 pt-4 border-t border-[#EAEAEA]">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-[#171717] border-l-2 border-[#C8A45D] pl-3">
+        <div className="space-y-4 pt-4 border-t border-[#2B2B2B]">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white border-l-2 border-[#C8A45D] pl-3">
             2. Print Specifications
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Service Required *
               </label>
               <select
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               >
                 {services.map((s) => (
-                  <option key={s.id} value={s.name}>
+                  <option key={s.id} value={s.name} className="bg-[#191919] text-white">
                     {s.name}
                   </option>
                 ))}
-                <option value="Bespoke Luxury Packaging">Bespoke Luxury Packaging</option>
-                <option value="Custom Signage & Fabrication">Custom Signage & Fabrication</option>
-                <option value="Other / Multi-Item Suite">Other / Multi-Item Suite</option>
+                <option value="Bespoke Luxury Packaging" className="bg-[#191919] text-white">Bespoke Luxury Packaging</option>
+                <option value="Custom Signage & Fabrication" className="bg-[#191919] text-white">Custom Signage & Fabrication</option>
+                <option value="Other / Multi-Item Suite" className="bg-[#191919] text-white">Other / Multi-Item Suite</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Estimated Quantity *
               </label>
               <select
                 value={formData.quantity}
                 onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               >
-                <option value="50">50 Units</option>
-                <option value="100">100 Units</option>
-                <option value="250">250 Units</option>
-                <option value="500">500 Units</option>
-                <option value="1,000">1,000 Units</option>
-                <option value="2,500">2,500 Units</option>
-                <option value="5,000">5,000 Units</option>
-                <option value="10,000+">10,000+ Units (Enterprise Bulk)</option>
+                <option value="50" className="bg-[#191919] text-white">50 Units</option>
+                <option value="100" className="bg-[#191919] text-white">100 Units</option>
+                <option value="250" className="bg-[#191919] text-white">250 Units</option>
+                <option value="500" className="bg-[#191919] text-white">500 Units</option>
+                <option value="1,000" className="bg-[#191919] text-white">1,000 Units</option>
+                <option value="2,500" className="bg-[#191919] text-white">2,500 Units</option>
+                <option value="5,000" className="bg-[#191919] text-white">5,000 Units</option>
+                <option value="10,000+" className="bg-[#191919] text-white">10,000+ Units (Enterprise Bulk)</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Dimensions / Size
               </label>
               <input
@@ -245,72 +251,72 @@ export default function QuoteRequestForm() {
                 placeholder="e.g. Standard UAE, A4, or 25x20x10cm"
                 value={formData.size}
                 onChange={(e) => setFormData({ ...formData, size: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Paper / Material Preference
               </label>
               <select
                 value={formData.paperPreference}
                 onChange={(e) => setFormData({ ...formData, paperPreference: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               >
-                <option value="450gsm Velvet Soft-Touch Board">450gsm Velvet Soft-Touch Board</option>
-                <option value="600gsm Cotton Triplex Board">600gsm Cotton Triplex Board</option>
-                <option value="350gsm Silk Coated Artboard">350gsm Silk Coated Artboard</option>
-                <option value="170gsm Silk / Gloss Text">170gsm Silk / Gloss Text</option>
-                <option value="Handmade Italian Textured Paper">Handmade Italian Textured Paper</option>
-                <option value="1800gsm Rigid Core Greyboard">1800gsm Rigid Core Greyboard</option>
-                <option value="Waterproof Polypropylene (BOPP)">Waterproof Polypropylene (BOPP)</option>
-                <option value="Cast Acrylic / Stainless Steel">Cast Acrylic / Stainless Steel</option>
-                <option value="Recommend Best Material">Recommend Best Material for My Budget</option>
+                <option value="450gsm Velvet Soft-Touch Board" className="bg-[#191919] text-white">450gsm Velvet Soft-Touch Board</option>
+                <option value="600gsm Cotton Triplex Board" className="bg-[#191919] text-white">600gsm Cotton Triplex Board</option>
+                <option value="350gsm Silk Coated Artboard" className="bg-[#191919] text-white">350gsm Silk Coated Artboard</option>
+                <option value="170gsm Silk / Gloss Text" className="bg-[#191919] text-white">170gsm Silk / Gloss Text</option>
+                <option value="Handmade Italian Textured Paper" className="bg-[#191919] text-white">Handmade Italian Textured Paper</option>
+                <option value="1800gsm Rigid Core Greyboard" className="bg-[#191919] text-white">1800gsm Rigid Core Greyboard</option>
+                <option value="Waterproof Polypropylene (BOPP)" className="bg-[#191919] text-white">Waterproof Polypropylene (BOPP)</option>
+                <option value="Cast Acrylic / Stainless Steel" className="bg-[#191919] text-white">Cast Acrylic / Stainless Steel</option>
+                <option value="Recommend Best Material" className="bg-[#191919] text-white">Recommend Best Material for My Budget</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Luxury Finishes Desired
               </label>
               <select
                 value={formData.finishingPreference}
                 onChange={(e) => setFormData({ ...formData, finishingPreference: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               >
-                <option value="Champagne Gold Hot Foil">Champagne Gold Hot Foil</option>
-                <option value="Silver Mirror Foil">Silver Mirror Foil</option>
-                <option value="3D Raised Spot UV">3D Raised Spot UV</option>
-                <option value="Blind Debossing / Embossing">Blind Debossing / Embossing</option>
-                <option value="Beveled Gold Edge Gilding">Beveled Gold Edge Gilding</option>
-                <option value="Soft-Touch Velvet Matte Lamination">Soft-Touch Velvet Matte Lamination</option>
-                <option value="Multiple Finishes (Foil + Spot UV)">Multiple Finishes (Foil + Spot UV)</option>
-                <option value="Standard Clean Matte / Gloss">Standard Clean Matte / Gloss</option>
+                <option value="Champagne Gold Hot Foil" className="bg-[#191919] text-white">Champagne Gold Hot Foil</option>
+                <option value="Silver Mirror Foil" className="bg-[#191919] text-white">Silver Mirror Foil</option>
+                <option value="3D Raised Spot UV" className="bg-[#191919] text-white">3D Raised Spot UV</option>
+                <option value="Blind Debossing / Embossing" className="bg-[#191919] text-white">Blind Debossing / Embossing</option>
+                <option value="Beveled Gold Edge Gilding" className="bg-[#191919] text-white">Beveled Gold Edge Gilding</option>
+                <option value="Soft-Touch Velvet Matte Lamination" className="bg-[#191919] text-white">Soft-Touch Velvet Matte Lamination</option>
+                <option value="Multiple Finishes (Foil + Spot UV)" className="bg-[#191919] text-white">Multiple Finishes (Foil + Spot UV)</option>
+                <option value="Standard Clean Matte / Gloss" className="bg-[#191919] text-white">Standard Clean Matte / Gloss</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
                 Target Timeline
               </label>
               <select
                 value={formData.urgency}
                 onChange={(e) => setFormData({ ...formData, urgency: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               >
-                <option value="Standard (2-4 Days)">Standard (2 – 4 Days)</option>
-                <option value="Express (24-48 Hours)">Express (24 – 48 Hours)</option>
-                <option value="Urgent Same-Day Emergency">Urgent Same-Day Emergency</option>
-                <option value="Flexible / Forward Planning">Flexible / Forward Planning</option>
+                <option value="Standard (2-4 Days)" className="bg-[#191919] text-white">Standard (2 – 4 Days)</option>
+                <option value="Express (24-48 Hours)" className="bg-[#191919] text-white">Express (24 – 48 Hours)</option>
+                <option value="Urgent Same-Day Emergency" className="bg-[#191919] text-white">Urgent Same-Day Emergency</option>
+                <option value="Flexible / Forward Planning" className="bg-[#191919] text-white">Flexible / Forward Planning</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#B3B3B3] uppercase tracking-wider mb-2">
               Additional Instructions / Special Requests
             </label>
             <textarea
@@ -318,13 +324,13 @@ export default function QuoteRequestForm() {
               placeholder="Provide any additional specifications: e.g. Pantone codes, foil placement, packaging insert requirements, or multi-item suites..."
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-              className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D] resize-none"
+              className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30 resize-none"
             />
           </div>
         </div>
 
         {/* Transmission Buttons */}
-        <div className="pt-4 border-t border-[#EAEAEA] space-y-4">
+        <div className="pt-4 border-t border-[#2B2B2B] space-y-4">
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               type="button"
@@ -338,14 +344,14 @@ export default function QuoteRequestForm() {
             <button
               type="button"
               onClick={handleSubmitMailto}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#171717] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider rounded-xs hover:bg-[#C8A45D] hover:text-[#171717] transition-all cursor-pointer border border-[#171717] hover:border-[#C8A45D]"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C8A45D] text-[#080808] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#C8A45D]"
             >
               <Mail className="w-4 h-4" />
               <span>Submit via Email</span>
             </button>
           </div>
 
-          <div className="flex items-center justify-center gap-6 text-xs text-neutral-500 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[#858585] pt-2">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#C8A45D]" />
               <span>No Spam Guarantee</span>

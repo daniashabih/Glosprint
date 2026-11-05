@@ -17,7 +17,6 @@ export default function SectionHeading({
   align = "center",
   className = "",
   titleTag: TitleTag = "h2",
-  light = false,
 }: SectionHeadingProps) {
   const alignmentClass =
     align === "center" ? "text-center items-center mx-auto" : "text-left items-start";
@@ -34,20 +33,12 @@ export default function SectionHeading({
         </div>
       )}
 
-      <TitleTag
-        className={`text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight font-serif ${
-          light ? "text-white" : "text-[#171717] dark:text-white"
-        }`}
-      >
+      <TitleTag className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight font-serif text-white">
         {title}
       </TitleTag>
 
       {description && (
-        <p
-          className={`mt-4 text-base sm:text-lg leading-relaxed max-w-2xl font-light ${
-            light ? "text-neutral-300" : "text-neutral-600 dark:text-neutral-300"
-          }`}
-        >
+        <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-2xl font-light text-[#B3B3B3]">
           {description}
         </p>
       )}

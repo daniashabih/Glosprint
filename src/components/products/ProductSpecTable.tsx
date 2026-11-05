@@ -24,27 +24,27 @@ export default function ProductSpecTable({ product }: ProductSpecTableProps) {
 
   return (
     <div className="space-y-6">
-      <div className="border border-[#EAEAEA] rounded-xs overflow-hidden bg-white">
-        <div className="bg-[#FAF9F6] px-6 py-4 border-b border-[#EAEAEA]">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-[#171717]">
+      <div className="border border-[#2B2B2B] rounded-xs overflow-hidden bg-[#191919]">
+        <div className="bg-[#202020] px-6 py-4 border-b border-[#2B2B2B]">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
             Technical Specifications & Options
           </h3>
-          <p className="text-xs text-neutral-500 font-light mt-0.5">
+          <p className="text-xs text-[#858585] font-light mt-0.5">
             Configurable parameters available for quotation
           </p>
         </div>
 
-        <div className="divide-y divide-[#EAEAEA]">
+        <div className="divide-y divide-[#2B2B2B]">
           {specs.map((item, idx) => (
             <div
               key={idx}
-              className="px-6 py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-xs"
+              className="px-6 py-3.5 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-xs hover:bg-[#202020]/60 transition-colors"
             >
-              <span className="font-semibold text-neutral-800 flex items-center gap-1.5">
+              <span className="font-semibold text-white flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#C8A45D] shrink-0" />
                 <span>{item.label}</span>
               </span>
-              <span className="sm:col-span-2 text-neutral-600 font-light leading-relaxed">
+              <span className="sm:col-span-2 text-[#B3B3B3] font-light leading-relaxed">
                 {item.value}
               </span>
             </div>
@@ -53,10 +53,10 @@ export default function ProductSpecTable({ product }: ProductSpecTableProps) {
       </div>
 
       {/* Production & Capability Disclaimer */}
-      <div className="p-4 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs flex items-start gap-3 text-xs text-neutral-600 leading-relaxed font-light">
+      <div className="p-4 bg-[#191919] border border-[#2B2B2B] rounded-xs flex items-start gap-3 text-xs text-[#B3B3B3] leading-relaxed font-light">
         <AlertCircle className="w-4 h-4 text-[#C8A45D] shrink-0 mt-0.5" />
         <p>
-          <strong className="text-neutral-900 font-medium">Specification Notice:</strong>{" "}
+          <strong className="text-white font-medium">Specification Notice:</strong>{" "}
           Specifications listed above represent configurable sample parameters. Final paper stocks, custom Pantone ink formulations, exact die-lines, and delivery schedules are confirmed during official consultation and digital proof sign-off.
         </p>
       </div>

@@ -8,7 +8,7 @@ export default function PortfolioPreview() {
   const previewItems = portfolioItems.slice(0, 4);
 
   return (
-    <section className="py-20 md:py-28 bg-white dark:bg-[#101114] border-b border-[#EAEAEA] dark:border-[#30333B] transition-colors duration-250">
+    <section className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <SectionHeading

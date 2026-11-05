@@ -35,7 +35,7 @@ export default function FloatingActions() {
         <button
           onClick={scrollToTop}
           aria-label="Scroll to top of page"
-          className="w-11 h-11 rounded-full bg-white dark:bg-[#1C1F26] text-[#171717] dark:text-white border border-[#EAEAEA] dark:border-[#30333B] shadow-md hover:border-[#C8A45D] dark:hover:border-[#DFCA95] hover:text-[#C8A45D] dark:hover:text-[#DFCA95] flex items-center justify-center transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+          className="w-11 h-11 rounded-full bg-[#191919] hover:bg-[#202020] text-white border border-[#2B2B2B] shadow-lg hover:border-[#C8A45D] hover:text-[#C8A45D] flex items-center justify-center transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
         >
           <ArrowUp className="w-5 h-5" />
         </button>

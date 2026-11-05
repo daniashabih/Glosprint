@@ -12,10 +12,10 @@ export default function Badge({
   className = "",
 }: BadgeProps) {
   const variantMap = {
-    gold: "bg-[#F8F5EC] dark:bg-[#C8A45D]/15 text-[#9E7B35] dark:text-[#DFCA95] border border-[#C8A45D]/40 dark:border-[#C8A45D]/50",
-    dark: "bg-[#171717] dark:bg-[#232732] text-white border border-[#171717] dark:border-[#30333B]",
-    outline: "bg-transparent text-[#171717] dark:text-neutral-200 border border-[#EAEAEA] dark:border-[#30333B]",
-    subtle: "bg-[#FAF9F6] dark:bg-[#181A20] text-[#525252] dark:text-neutral-300 border border-[#EAEAEA] dark:border-[#30333B]",
+    gold: "bg-[#C8A45D]/15 text-[#DFCA95] border border-[#C8A45D]/50",
+    dark: "bg-[#202020] text-white border border-[#2B2B2B]",
+    outline: "bg-transparent text-[#B3B3B3] border border-[#2B2B2B]",
+    subtle: "bg-[#191919] text-[#B3B3B3] border border-[#2B2B2B]",
   };
 
   return (

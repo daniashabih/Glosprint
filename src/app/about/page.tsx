@@ -52,7 +52,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Header */}
-      <div className="bg-[#FAF9F6] border-b border-[#EAEAEA] py-14 md:py-20">
+      <div className="bg-[#101010] border-b border-[#2B2B2B] py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ name: "About Us", url: "/about" }]} />
           
@@ -60,10 +60,10 @@ export default function AboutPage() {
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#C8A45D]">
               Our Heritage & Vision
             </span>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-[#171717] font-serif leading-tight">
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-white font-serif leading-tight">
               Premium Printing & Creative Branding.
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-neutral-600 font-light leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#B3B3B3] font-light leading-relaxed">
               Founded in Dubai, GLOSPRINT was conceived to bridge the divide between industrial manufacturing efficiency and bespoke haute-couture print craftsmanship.
             </p>
           </div>
@@ -71,17 +71,17 @@ export default function AboutPage() {
       </div>
 
       {/* Brand Story Section */}
-      <section className="py-20 md:py-28 bg-white border-b border-[#EAEAEA]">
+      <section className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
                 The Atelier Story
               </span>
-              <h2 className="text-3xl sm:text-4xl font-light font-serif text-[#171717] leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-light font-serif text-white leading-tight">
                 Crafting Physical Distinction in a Digital World
               </h2>
-              <div className="space-y-4 text-neutral-600 text-sm sm:text-base leading-relaxed font-light">
+              <div className="space-y-4 text-[#B3B3B3] text-sm sm:text-base leading-relaxed font-light">
                 <p>
                   In a digital age saturated with ephemeral pixels and fleeting messages, the physical touch of an exquisitely crafted object holds unprecedented power. When a client slides open a velvet-lined rigid presentation box or holds an executive business card with mirror-foiled bevels, your brand transcends digital noise into tangible luxury.
                 </p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative aspect-[4/3] rounded-xs overflow-hidden border border-[#EAEAEA] shadow-xl">
+              <div className="relative aspect-[4/3] rounded-xs overflow-hidden border border-[#2B2B2B] bg-[#191919] shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1000&q=80"
                   alt="GLOSPRINT Dubai Printing Atelier & Luxury Craftsmen"
@@ -119,29 +119,29 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6] border-b border-[#EAEAEA]">
+      <section className="py-20 md:py-28 bg-[#141414] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="p-8 sm:p-10 bg-white border border-[#EAEAEA] rounded-xs space-y-4">
-              <div className="w-12 h-12 rounded-xs bg-[#FAF9F6] border border-[#C8A45D]/30 flex items-center justify-center">
+            <div className="p-8 sm:p-10 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] transition-all rounded-xs space-y-4 shadow-lg">
+              <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#C8A45D]/30 flex items-center justify-center">
                 <HeartHandshake className="w-6 h-6 text-[#C8A45D]" />
               </div>
-              <h3 className="text-2xl font-light font-serif text-[#171717]">
+              <h3 className="text-2xl font-light font-serif text-white">
                 Our Mission
               </h3>
-              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-[#B3B3B3] leading-relaxed font-light">
                 To empower brands in Dubai and the GCC with print collateral that commands authority, captivates audiences, and elevates brand perception through impeccable tactile execution, speed, and uncompromising quality standards.
               </p>
             </div>
 
-            <div className="p-8 sm:p-10 bg-white border border-[#EAEAEA] rounded-xs space-y-4">
-              <div className="w-12 h-12 rounded-xs bg-[#FAF9F6] border border-[#C8A45D]/30 flex items-center justify-center">
+            <div className="p-8 sm:p-10 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] transition-all rounded-xs space-y-4 shadow-lg">
+              <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#C8A45D]/30 flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-[#C8A45D]" />
               </div>
-              <h3 className="text-2xl font-light font-serif text-[#171717]">
+              <h3 className="text-2xl font-light font-serif text-white">
                 Our Vision
               </h3>
-              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-[#B3B3B3] leading-relaxed font-light">
                 To be universally recognized as the Middle East&apos;s definitive luxury print house, setting the global benchmark for creative finishes, packaging engineering, and sustainable manufacturing excellence.
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 md:py-28 bg-white border-b border-[#EAEAEA]">
+      <section className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             overline="Guiding Principles"
@@ -162,15 +162,15 @@ export default function AboutPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-8 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs space-y-4 hover:border-[#C8A45D] transition-all"
+                className="p-8 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] rounded-xs space-y-4 hover:border-[#C8A45D] transition-all shadow-lg"
               >
-                <div className="w-12 h-12 rounded-xs bg-white border border-[#EAEAEA] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xs bg-[#101010] border border-[#2B2B2B] flex items-center justify-center">
                   {v.icon}
                 </div>
-                <h3 className="text-lg font-medium text-[#171717] font-serif">
+                <h3 className="text-lg font-medium text-white font-serif">
                   {v.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#B3B3B3] leading-relaxed font-light">
                   {v.description}
                 </p>
               </div>
@@ -180,11 +180,11 @@ export default function AboutPage() {
       </section>
 
       {/* Quality Commitment Section */}
-      <section className="py-20 md:py-28 bg-[#FAF9F6] border-b border-[#EAEAEA]">
+      <section className="py-20 md:py-28 bg-[#141414] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-square rounded-xs overflow-hidden border border-[#EAEAEA] shadow-lg">
+              <div className="relative aspect-square rounded-xs overflow-hidden border border-[#2B2B2B] bg-[#191919] shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
                   alt="Quality control and offset printing at GLOSPRINT Dubai"
@@ -199,10 +199,10 @@ export default function AboutPage() {
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
                 Quality Assurance Guarantee
               </span>
-              <h2 className="text-3xl sm:text-4xl font-light font-serif text-[#171717]">
+              <h2 className="text-3xl sm:text-4xl font-light font-serif text-white">
                 State-of-the-Art German & Swiss Technology
               </h2>
-              <p className="text-neutral-600 text-sm sm:text-base leading-relaxed font-light">
+              <p className="text-[#B3B3B3] text-sm sm:text-base leading-relaxed font-light">
                 Our plant is equipped with calibrated multi-unit Heidelberg Speedmaster offset presses, Xerox Iridesse digital engines with specialty metallic toners, and Zünd precision flatbed cutters.
               </p>
 
@@ -217,7 +217,7 @@ export default function AboutPage() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#C8A45D] shrink-0" />
-                    <span className="text-xs sm:text-sm font-medium text-neutral-800">{item}</span>
+                    <span className="text-xs sm:text-sm font-medium text-white">{item}</span>
                   </div>
                 ))}
               </div>

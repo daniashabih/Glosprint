@@ -85,7 +85,7 @@ const iconMap = {
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 md:py-28 bg-[#FAF9F6] border-b border-[#EAEAEA]" id="how-it-works">
+    <section className="py-20 md:py-28 bg-[#101010] border-b border-[#2B2B2B]" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           overline="Customer Journey"
@@ -99,28 +99,28 @@ export default function HowItWorks() {
             return (
               <div
                 key={step.step}
-                className="bg-white border border-[#EAEAEA] rounded-xs p-6 sm:p-8 flex flex-col justify-between space-y-5 transition-all duration-300 hover:shadow-md hover:border-[#C8A45D]/60 relative group"
+                className="bg-[#191919] border border-[#2B2B2B] rounded-xs p-6 sm:p-8 flex flex-col justify-between space-y-5 transition-all duration-300 hover:bg-[#202020] hover:shadow-xl hover:border-[#C8A45D] relative group"
               >
                 {/* Step Number Watermark */}
-                <span className="text-4xl font-serif font-light text-neutral-200 group-hover:text-[#C8A45D]/30 transition-colors">
+                <span className="text-4xl font-serif font-light text-[#2B2B2B] group-hover:text-[#C8A45D]/50 transition-colors">
                   {step.step}
                 </span>
 
                 <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-xs bg-[#FAF9F6] border border-[#EAEAEA] flex items-center justify-center text-[#C8A45D]">
+                  <div className="w-12 h-12 rounded-xs bg-[#141414] border border-[#2B2B2B] flex items-center justify-center text-[#C8A45D]">
                     <IconComponent className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-lg font-serif font-medium text-[#171717] group-hover:text-[#C8A45D] transition-colors">
+                  <h3 className="text-lg font-serif font-medium text-white group-hover:text-[#C8A45D] transition-colors">
                     {step.title}
                   </h3>
 
-                  <p className="text-xs text-neutral-600 leading-relaxed font-light">
+                  <p className="text-xs text-[#B3B3B3] leading-relaxed font-light">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#EAEAEA]/80 text-[11px] text-neutral-500 font-light leading-relaxed">
+                <div className="pt-4 border-t border-[#2B2B2B] text-[11px] text-[#858585] font-light leading-relaxed">
                   {step.detail}
                 </div>
               </div>
@@ -129,20 +129,20 @@ export default function HowItWorks() {
         </div>
 
         {/* CTA Strip */}
-        <div className="mt-14 p-6 sm:p-8 bg-white border border-[#EAEAEA] rounded-xs flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="mt-14 p-6 sm:p-8 bg-[#191919] border border-[#2B2B2B] rounded-xs flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-base font-serif font-medium text-[#171717]">
+            <h4 className="text-base font-serif font-medium text-white">
               Ready to start your custom printing project?
             </h4>
-            <p className="text-xs text-neutral-500 font-light">
+            <p className="text-xs text-[#B3B3B3] font-light">
               Submit your specifications and our estimating team will respond promptly.
             </p>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              href="/request-quote"
-              className="inline-flex items-center gap-1.5 px-6 py-3 bg-[#171717] hover:bg-[#C8A45D] text-white text-xs font-semibold uppercase tracking-wider transition-colors rounded-xs"
+              href="/request-a-quote"
+              className="inline-flex items-center gap-1.5 px-6 py-3 bg-[#C8A45D] hover:bg-[#DFCA95] text-[#080808] text-xs font-bold uppercase tracking-wider transition-colors rounded-xs shadow-xs"
             >
               <span>Request a Quote</span>
               <ArrowRight className="w-3.5 h-3.5" />

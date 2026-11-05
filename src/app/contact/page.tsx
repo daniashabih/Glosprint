@@ -26,7 +26,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Header */}
-      <div className="bg-[#FAF9F6] border-b border-[#EAEAEA] py-14 md:py-20">
+      <div className="bg-[#101010] border-b border-[#2B2B2B] py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ name: "Contact", url: "/contact" }]} />
           
@@ -34,10 +34,10 @@ export default function ContactPage() {
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#C8A45D]">
               Direct Engagement
             </span>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-[#171717] font-serif leading-tight">
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-white font-serif leading-tight">
               Contact GLOSPRINT
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-neutral-600 font-light leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#B3B3B3] font-light leading-relaxed">
               Visit our Al Quoz printing atelier, schedule an executive paper consultation, or submit your specifications for immediate pricing.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function ContactPage() {
       </div>
 
       {/* Main Contact Section */}
-      <section className="py-20 md:py-28 bg-white border-b border-[#EAEAEA]">
+      <section className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Contact Form */}
@@ -56,16 +56,16 @@ export default function ContactPage() {
             {/* Right Column: Direct Contact Information Cards */}
             <div className="lg:col-span-5 space-y-6">
               {/* Direct WhatsApp Callout */}
-              <div className="p-6 bg-emerald-50/60 border border-emerald-200 rounded-xs space-y-3">
+              <div className="p-6 bg-[#191919] border border-emerald-800/60 rounded-xs space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xs bg-[#25D366] text-white flex items-center justify-center shrink-0">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#171717] uppercase tracking-wide">
+                    <h3 className="text-sm font-bold text-white uppercase tracking-wide">
                       Instant WhatsApp Channel
                     </h3>
-                    <p className="text-xs text-neutral-600">
+                    <p className="text-xs text-[#B3B3B3]">
                       Typically responds in under 15 minutes
                     </p>
                   </div>
@@ -83,19 +83,19 @@ export default function ContactPage() {
               </div>
 
               {/* Physical Address Card */}
-              <div className="p-6 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs space-y-3">
+              <div className="p-6 bg-[#191919] border border-[#2B2B2B] rounded-xs space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xs bg-white border border-[#EAEAEA] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xs bg-[#141414] border border-[#2B2B2B] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-[#C8A45D]" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#858585]">
                       Facility & Showroom
                     </h4>
-                    <p className="text-sm font-medium text-[#171717]">
+                    <p className="text-sm font-medium text-white">
                       {companyInfo.address.street}
                     </p>
-                    <p className="text-xs text-neutral-500">
+                    <p className="text-xs text-[#B3B3B3]">
                       {companyInfo.address.neighborhood}, {companyInfo.address.city}, {companyInfo.address.country}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#C8A45D] hover:underline pt-1"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#C8A45D] hover:text-[#DFCA95] hover:underline pt-1"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Open in Google Maps</span>
@@ -113,30 +113,30 @@ export default function ContactPage() {
               </div>
 
               {/* Phone & Email */}
-              <div className="p-6 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs space-y-4">
+              <div className="p-6 bg-[#191919] border border-[#2B2B2B] rounded-xs space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xs bg-white border border-[#EAEAEA] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xs bg-[#141414] border border-[#2B2B2B] flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-[#C8A45D]" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#858585]">
                       Landline
                     </h4>
-                    <a href={`tel:${companyInfo.phone}`} className="text-sm font-medium text-[#171717] hover:text-[#C8A45D]">
+                    <a href={`tel:${companyInfo.phone}`} className="text-sm font-medium text-white hover:text-[#C8A45D] transition-colors">
                       {companyInfo.phoneDisplay}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 pt-3 border-t border-[#EAEAEA]">
-                  <div className="w-10 h-10 rounded-xs bg-white border border-[#EAEAEA] flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-3 pt-3 border-t border-[#2B2B2B]">
+                  <div className="w-10 h-10 rounded-xs bg-[#141414] border border-[#2B2B2B] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-[#C8A45D]" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#858585]">
                       Electronic Mail
                     </h4>
-                    <a href={`mailto:${companyInfo.email}`} className="text-sm font-medium text-[#171717] hover:text-[#C8A45D]">
+                    <a href={`mailto:${companyInfo.email}`} className="text-sm font-medium text-white hover:text-[#C8A45D] transition-colors">
                       {companyInfo.email}
                     </a>
                   </div>
@@ -144,19 +144,19 @@ export default function ContactPage() {
               </div>
 
               {/* Business Hours */}
-              <div className="p-6 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs space-y-3">
+              <div className="p-6 bg-[#191919] border border-[#2B2B2B] rounded-xs space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xs bg-white border border-[#EAEAEA] flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xs bg-[#141414] border border-[#2B2B2B] flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5 text-[#C8A45D]" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#858585]">
                       Operating Hours
                     </h4>
-                    <p className="text-sm font-medium text-[#171717]">
+                    <p className="text-sm font-medium text-white">
                       {companyInfo.openingHours[0].days}
                     </p>
-                    <p className="text-xs text-neutral-500">
+                    <p className="text-xs text-[#B3B3B3]">
                       {companyInfo.openingHours[0].hours}
                     </p>
                   </div>
@@ -168,17 +168,17 @@ export default function ContactPage() {
       </section>
 
       {/* Google Maps Visual Card */}
-      <section className="py-16 bg-[#FAF9F6] border-b border-[#EAEAEA]">
+      <section className="py-16 bg-[#141414] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-[#EAEAEA] rounded-xs p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="bg-[#191919] border border-[#2B2B2B] rounded-xs p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center md:text-left">
               <span className="text-xs uppercase tracking-wider font-semibold text-[#C8A45D]">
                 Visit Our Showroom
               </span>
-              <h3 className="text-xl font-medium font-serif text-[#171717]">
+              <h3 className="text-xl font-medium font-serif text-white">
                 Touch Our Sample Swatches in Al Quoz, Dubai
               </h3>
-              <p className="text-sm text-neutral-600 font-light max-w-xl">
+              <p className="text-sm text-[#B3B3B3] font-light max-w-xl">
                 We invite corporate marketing teams, luxury founders, and creative agencies to browse hundreds of paperboards, foils, and binding samples.
               </p>
             </div>
@@ -187,9 +187,9 @@ export default function ContactPage() {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#171717] text-white text-xs font-semibold uppercase tracking-wider rounded-xs hover:bg-[#C8A45D] hover:text-[#171717] transition-all shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#C8A45D] text-[#080808] text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all shrink-0"
             >
-              <Navigation className="w-4 h-4 text-[#C8A45D]" />
+              <Navigation className="w-4 h-4 text-[#080808]" />
               <span>Get GPS Directions</span>
             </a>
           </div>

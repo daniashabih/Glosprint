@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       {faqSchema && <JsonLd data={faqSchema} />}
 
       {/* Hero Section */}
-      <div className="bg-[#FAF9F6] border-b border-[#EAEAEA] py-14 md:py-20">
+      <div className="bg-[#101010] border-b border-[#2B2B2B] py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -91,28 +91,28 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#C8A45D]/40 rounded-xs text-xs font-semibold uppercase tracking-wider text-[#9E7B35]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#191919] border border-[#C8A45D]/40 rounded-xs text-xs font-semibold uppercase tracking-wider text-[#DFCA95]">
                 <Sparkles className="w-3.5 h-3.5 text-[#C8A45D]" />
                 <span>{service.category}</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#171717] font-serif leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white font-serif leading-tight">
                 {service.name}
               </h1>
 
-              <p className="text-base sm:text-lg text-neutral-600 font-light leading-relaxed">
+              <p className="text-base sm:text-lg text-[#B3B3B3] font-light leading-relaxed">
                 {service.shortDescription}
               </p>
 
               {/* Quick Specs Bar */}
-              <div className="flex flex-wrap items-center gap-6 pt-2 text-sm text-neutral-600">
+              <div className="flex flex-wrap items-center gap-6 pt-2 text-sm text-[#B3B3B3]">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-[#C8A45D]" />
-                  <span>Turnaround: <strong>{service.turnaround}</strong></span>
+                  <span>Turnaround: <strong className="text-white">{service.turnaround}</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Package className="w-4 h-4 text-[#C8A45D]" />
-                  <span>Min Order: <strong>{service.minOrder}</strong></span>
+                  <span>Min Order: <strong className="text-white">{service.minOrder}</strong></span>
                 </div>
               </div>
 
@@ -131,9 +131,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold uppercase tracking-wider text-emerald-700 bg-white hover:bg-emerald-50 border border-emerald-300 rounded-xs transition-colors w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 text-sm font-semibold uppercase tracking-wider text-emerald-400 bg-[#191919] hover:bg-emerald-950/40 border border-emerald-800/60 rounded-xs transition-colors w-full sm:w-auto"
                 >
-                  <MessageSquare className="w-4 h-4 text-emerald-600" />
+                  <MessageSquare className="w-4 h-4 text-emerald-400" />
                   <span>Inquire via WhatsApp</span>
                 </a>
               </div>
@@ -141,7 +141,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             {/* Visual Hero Image */}
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] rounded-xs overflow-hidden border border-[#EAEAEA] shadow-xl">
+              <div className="relative aspect-[4/3] rounded-xs overflow-hidden border border-[#2B2B2B] bg-[#191919] shadow-2xl">
                 <Image
                   src={service.heroImage}
                   alt={`${service.name} — GLOSPRINT Dubai`}
@@ -157,7 +157,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       </div>
 
       {/* Main Content & Benefits Section */}
-      <section className="py-20 md:py-28 bg-white border-b border-[#EAEAEA]">
+      <section className="py-20 md:py-28 bg-[#080808] border-b border-[#2B2B2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left Column: Full Description & Key Benefits */}
@@ -166,24 +166,24 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
                   Craftsmanship & Standards
                 </span>
-                <h2 className="mt-2 text-2xl sm:text-3xl font-light font-serif text-[#171717]">
+                <h2 className="mt-2 text-2xl sm:text-3xl font-light font-serif text-white">
                   Precision Execution & Luxury Finishes
                 </h2>
-                <div className="mt-4 text-neutral-600 leading-relaxed font-light space-y-4 text-base">
+                <div className="mt-4 text-[#B3B3B3] leading-relaxed font-light space-y-4 text-base">
                   <p>{service.fullDescription}</p>
                 </div>
               </div>
 
               {/* Benefits Checklist */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-[#171717] font-serif">
+                <h3 className="text-lg font-semibold text-white font-serif">
                   Key Advantages of Choosing GLOSPRINT:
                 </h3>
                 <div className="space-y-3">
                   {service.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-[#C8A45D] shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-neutral-700 font-light leading-relaxed">
+                      <span className="text-sm sm:text-base text-[#B3B3B3] font-light leading-relaxed">
                         {benefit}
                       </span>
                     </div>
@@ -192,22 +192,22 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
 
               {/* Options & Materials Grid */}
-              <div className="space-y-6 pt-4 border-t border-[#EAEAEA]">
-                <h3 className="text-xl font-medium font-serif text-[#171717]">
+              <div className="space-y-6 pt-4 border-t border-[#2B2B2B]">
+                <h3 className="text-xl font-medium font-serif text-white">
                   Available Stocks & Customizations
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {service.options.map((option) => (
                     <div
                       key={option.category}
-                      className="p-5 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs space-y-3"
+                      className="p-5 bg-[#191919] border border-[#2B2B2B] rounded-xs space-y-3"
                     >
-                      <h4 className="text-xs font-semibold uppercase tracking-wider text-[#171717] border-b border-[#C8A45D]/30 pb-1.5 inline-block">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-white border-b border-[#C8A45D]/40 pb-1.5 inline-block">
                         {option.category}
                       </h4>
                       <ul className="space-y-1.5">
                         {option.choices.map((choice) => (
-                          <li key={choice} className="text-xs text-neutral-600 flex items-center gap-2">
+                          <li key={choice} className="text-xs text-[#B3B3B3] flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#C8A45D]" />
                             <span>{choice}</span>
                           </li>
@@ -222,19 +222,19 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             {/* Right Column: Technical Specifications & Finishes Sticky Card */}
             <div className="lg:col-span-5 space-y-8">
               {/* Technical Specs Card */}
-              <div className="p-8 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs space-y-6">
+              <div className="p-8 bg-[#191919] border border-[#2B2B2B] rounded-xs space-y-6 shadow-xl">
                 <div className="flex items-center gap-2">
                   <FileCheck className="w-5 h-5 text-[#C8A45D]" />
-                  <h3 className="text-lg font-medium font-serif text-[#171717]">
+                  <h3 className="text-lg font-medium font-serif text-white">
                     Technical Specifications
                   </h3>
                 </div>
 
-                <div className="divide-y divide-[#EAEAEA] text-sm">
+                <div className="divide-y divide-[#2B2B2B] text-sm">
                   {service.specs.map((spec) => (
                     <div key={spec.label} className="py-3 flex justify-between gap-4">
-                      <span className="text-neutral-500 font-light">{spec.label}</span>
-                      <span className="font-medium text-[#171717] text-right">{spec.value}</span>
+                      <span className="text-[#858585] font-light">{spec.label}</span>
+                      <span className="font-medium text-white text-right">{spec.value}</span>
                     </div>
                   ))}
                 </div>
@@ -252,15 +252,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
 
               {/* Luxury Finishes Showcase Box */}
-              <div className="p-8 bg-white border border-[#EAEAEA] rounded-xs space-y-4">
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+              <div className="p-8 bg-[#141414] border border-[#2B2B2B] rounded-xs space-y-4">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-[#858585]">
                   Signature Embellishments Available
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {service.finishes.map((f) => (
                     <span
                       key={f}
-                      className="px-3 py-1.5 bg-[#FAF9F6] border border-[#C8A45D]/30 text-xs font-medium text-neutral-700 rounded-xs"
+                      className="px-3 py-1.5 bg-[#191919] border border-[#C8A45D]/40 text-xs font-medium text-[#B3B3B3] rounded-xs"
                     >
                       {f}
                     </span>
@@ -274,13 +274,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       {/* FAQ Section */}
       {service.faqs && service.faqs.length > 0 && (
-        <section className="py-20 md:py-28 bg-[#FAF9F6] border-b border-[#EAEAEA]">
+        <section className="py-20 md:py-28 bg-[#141414] border-b border-[#2B2B2B]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
                 Frequently Asked Questions
               </span>
-              <h2 className="mt-2 text-3xl font-light font-serif text-[#171717]">
+              <h2 className="mt-2 text-3xl font-light font-serif text-white">
                 {service.name} FAQs
               </h2>
             </div>
@@ -292,13 +292,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-20 bg-white border-b border-[#EAEAEA]">
+        <section className="py-20 bg-[#080808] border-b border-[#2B2B2B]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#C8A45D]">
                 Complementary Solutions
               </span>
-              <h2 className="mt-2 text-3xl font-light font-serif text-[#171717]">
+              <h2 className="mt-2 text-3xl font-light font-serif text-white">
                 Related Printing Services
               </h2>
             </div>
@@ -307,17 +307,17 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               {relatedServices.map((rel) => (
                 <div
                   key={rel.id}
-                  className="group p-6 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs hover:border-[#C8A45D] transition-all space-y-4"
+                  className="group p-6 bg-[#191919] hover:bg-[#202020] border border-[#2B2B2B] rounded-xs hover:border-[#C8A45D] transition-all space-y-4"
                 >
-                  <h3 className="text-lg font-medium font-serif text-[#171717] group-hover:text-[#C8A45D] transition-colors">
+                  <h3 className="text-lg font-medium font-serif text-white group-hover:text-[#C8A45D] transition-colors">
                     <Link href={`/services/${rel.slug}`}>{rel.name}</Link>
                   </h3>
-                  <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed font-light">
+                  <p className="text-xs text-[#B3B3B3] line-clamp-2 leading-relaxed font-light">
                     {rel.shortDescription}
                   </p>
                   <Link
                     href={`/services/${rel.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-[#171717] group-hover:text-[#C8A45D] transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-white group-hover:text-[#C8A45D] transition-colors"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -75,27 +75,27 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white dark:bg-[#1C1F26] p-8 sm:p-10 border border-[#EAEAEA] dark:border-[#30333B] rounded-xs shadow-xs space-y-6 transition-colors duration-250">
+    <div className="bg-[#191919] p-8 sm:p-10 border border-[#2B2B2B] rounded-xs shadow-xl space-y-6">
       <div className="space-y-1">
-        <h3 className="text-2xl font-light font-serif text-[#171717] dark:text-white">
+        <h3 className="text-2xl font-light font-serif text-white">
           Send Us a Message
         </h3>
-        <p className="text-sm text-neutral-500 dark:text-[#A1A1AA] font-light">
+        <p className="text-sm text-[#B3B3B3] font-light">
           Submit directly via prefilled WhatsApp or open in your email client.
         </p>
       </div>
 
       {/* Success Notification */}
       {submittedMethod && (
-        <div className="p-4 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-800 dark:text-emerald-300 text-sm">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+        <div className="p-4 bg-emerald-950/40 border border-emerald-800 rounded-xs flex items-start gap-3 text-emerald-300 text-sm">
+          <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
             <p className="font-semibold">
               {submittedMethod === "whatsapp"
                 ? "Opening WhatsApp Chat..."
                 : "Opening Email Client..."}
             </p>
-            <p className="text-xs text-emerald-700 dark:text-emerald-400">
+            <p className="text-xs text-emerald-400">
               Your inquiry has been compiled with all provided parameters. If the window did not open automatically, click the submission button again.
             </p>
           </div>
@@ -104,8 +104,8 @@ export default function ContactForm() {
 
       {/* Error Summary if any */}
       {Object.keys(errors).length > 0 && (
-        <div className="p-4 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-800 dark:text-rose-300 text-xs">
-          <AlertCircle className="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+        <div className="p-4 bg-rose-950/40 border border-rose-800 rounded-xs flex items-start gap-2.5 text-rose-300 text-xs">
+          <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
           <span>Please correct the highlighted fields below to continue.</span>
         </div>
       )}
@@ -113,7 +113,7 @@ export default function ContactForm() {
       <form className="space-y-5" noValidate>
         {/* Full Name */}
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider text-[#B3B3B3] mb-2">
             Full Name *
           </label>
           <input
@@ -125,19 +125,21 @@ export default function ContactForm() {
               setFormData({ ...formData, fullName: e.target.value });
               if (errors.fullName) setErrors({ ...errors, fullName: undefined });
             }}
-            className={`w-full px-4 py-3 bg-[#FAF9F6] dark:bg-[#181A20] border rounded-xs text-sm text-[#171717] dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-hidden transition-colors ${
-              errors.fullName ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] dark:border-[#30333B] focus:border-[#C8A45D] dark:focus:border-[#DFCA95]"
+            className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
+              errors.fullName
+                ? "border-rose-500 focus:border-rose-400"
+                : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
             }`}
           />
           {errors.fullName && (
-            <p className="mt-1 text-xs text-rose-600 dark:text-rose-400">{errors.fullName}</p>
+            <p className="mt-1 text-xs text-rose-400">{errors.fullName}</p>
           )}
         </div>
 
         {/* Email & Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#B3B3B3] mb-2">
               Email Address *
             </label>
             <input
@@ -149,17 +151,19 @@ export default function ContactForm() {
                 setFormData({ ...formData, email: e.target.value });
                 if (errors.email) setErrors({ ...errors, email: undefined });
               }}
-              className={`w-full px-4 py-3 bg-[#FAF9F6] dark:bg-[#181A20] border rounded-xs text-sm text-[#171717] dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-hidden transition-colors ${
-                errors.email ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] dark:border-[#30333B] focus:border-[#C8A45D] dark:focus:border-[#DFCA95]"
+              className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
+                errors.email
+                  ? "border-rose-500 focus:border-rose-400"
+                  : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               }`}
             />
             {errors.email && (
-              <p className="mt-1 text-xs text-rose-600 dark:text-rose-400">{errors.email}</p>
+              <p className="mt-1 text-xs text-rose-400">{errors.email}</p>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#B3B3B3] mb-2">
               Phone / WhatsApp Number *
             </label>
             <input
@@ -171,39 +175,41 @@ export default function ContactForm() {
                 setFormData({ ...formData, phone: e.target.value });
                 if (errors.phone) setErrors({ ...errors, phone: undefined });
               }}
-              className={`w-full px-4 py-3 bg-[#FAF9F6] dark:bg-[#181A20] border rounded-xs text-sm text-[#171717] dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-hidden transition-colors ${
-                errors.phone ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] dark:border-[#30333B] focus:border-[#C8A45D] dark:focus:border-[#DFCA95]"
+              className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors ${
+                errors.phone
+                  ? "border-rose-500 focus:border-rose-400"
+                  : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
               }`}
             />
             {errors.phone && (
-              <p className="mt-1 text-xs text-rose-600 dark:text-rose-400">{errors.phone}</p>
+              <p className="mt-1 text-xs text-rose-400">{errors.phone}</p>
             )}
           </div>
         </div>
 
         {/* Service Selection */}
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider text-[#B3B3B3] mb-2">
             Interested Printing Service
           </label>
           <select
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 bg-[#FAF9F6] dark:bg-[#181A20] border border-[#EAEAEA] dark:border-[#30333B] rounded-xs text-sm text-[#171717] dark:text-white focus:outline-hidden focus:border-[#C8A45D] dark:focus:border-[#DFCA95] transition-colors"
+            className="w-full px-4 py-3 bg-[#101010] border border-[#2B2B2B] rounded-xs text-sm text-white focus:outline-hidden focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30 transition-colors"
           >
-            <option value="" className="dark:bg-[#1C1F26] dark:text-white">Select a service (optional)</option>
+            <option value="" className="bg-[#191919] text-white">Select a service (optional)</option>
             {services.map((s) => (
-              <option key={s.id} value={s.name} className="dark:bg-[#1C1F26] dark:text-white">
+              <option key={s.id} value={s.name} className="bg-[#191919] text-white">
                 {s.name}
               </option>
             ))}
-            <option value="Custom Printing Inquiry" className="dark:bg-[#1C1F26] dark:text-white">Other / Custom Inquiry</option>
+            <option value="Custom Printing Inquiry" className="bg-[#191919] text-white">Other / Custom Inquiry</option>
           </select>
         </div>
 
         {/* Message */}
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300 mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider text-[#B3B3B3] mb-2">
             Your Message & Specifications *
           </label>
           <textarea
@@ -215,12 +221,14 @@ export default function ContactForm() {
               setFormData({ ...formData, message: e.target.value });
               if (errors.message) setErrors({ ...errors, message: undefined });
             }}
-            className={`w-full px-4 py-3 bg-[#FAF9F6] dark:bg-[#181A20] border rounded-xs text-sm text-[#171717] dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-hidden transition-colors resize-none ${
-              errors.message ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] dark:border-[#30333B] focus:border-[#C8A45D] dark:focus:border-[#DFCA95]"
+            className={`w-full px-4 py-3 bg-[#101010] border rounded-xs text-sm text-white placeholder:text-[#858585] focus:outline-hidden transition-colors resize-none ${
+              errors.message
+                ? "border-rose-500 focus:border-rose-400"
+                : "border-[#2B2B2B] focus:border-[#C8A45D] focus:ring-1 focus:ring-[#C8A45D]/30"
             }`}
           />
           {errors.message && (
-            <p className="mt-1 text-xs text-rose-600 dark:text-rose-400">{errors.message}</p>
+            <p className="mt-1 text-xs text-rose-400">{errors.message}</p>
           )}
         </div>
 
@@ -238,15 +246,15 @@ export default function ContactForm() {
           <button
             type="button"
             onClick={handleSubmitMailto}
-            className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#171717] dark:bg-[#C8A45D] text-white dark:text-[#101114] text-xs font-semibold uppercase tracking-wider rounded-xs hover:bg-[#C8A45D] hover:text-[#171717] dark:hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#171717] dark:border-[#C8A45D]"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C8A45D] text-[#080808] text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-[#DFCA95] transition-all cursor-pointer border border-[#C8A45D]"
           >
             <Mail className="w-4 h-4" />
             <span>Send via Email</span>
           </button>
         </div>
 
-        <p className="text-[11px] text-neutral-400 dark:text-neutral-500 text-center flex items-center justify-center gap-1.5 pt-1">
-          <AlertCircle className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500" />
+        <p className="text-[11px] text-[#858585] text-center flex items-center justify-center gap-1.5 pt-1">
+          <AlertCircle className="w-3.5 h-3.5 text-[#858585]" />
           <span>Inquiries are securely handled via direct encrypted WhatsApp or your native email client.</span>
         </p>
       </form>

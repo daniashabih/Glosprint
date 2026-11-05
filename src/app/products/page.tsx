@@ -24,7 +24,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* Header Banner */}
-      <div className="bg-[#FAF9F6] border-b border-[#EAEAEA] py-14 md:py-20">
+      <div className="bg-[#101010] border-b border-[#2B2B2B] py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ name: "Products", url: "/products" }]} />
 
@@ -32,10 +32,10 @@ export default function ProductsPage() {
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#C8A45D]">
               Complete Commercial Catalog
             </span>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-[#171717] font-serif leading-tight">
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-white font-serif leading-tight">
               Printing & Packaging Products
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-neutral-600 font-light leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#B3B3B3] font-light leading-relaxed">
               Explore our full spectrum of 66 industrial and bespoke print formats. Filter by category, paper stock, or luxury finishing, and request a tailored trade quotation.
             </p>
           </div>
@@ -43,16 +43,18 @@ export default function ProductsPage() {
       </div>
 
       {/* Main Catalog Body */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Suspense
-          fallback={
-            <div className="py-20 text-center text-xs text-neutral-400">
-              Loading GLOSPRINT product catalog...
-            </div>
-          }
-        >
-          <CatalogView />
-        </Suspense>
+      <div className="bg-[#080808] border-b border-[#2B2B2B]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <Suspense
+            fallback={
+              <div className="py-20 text-center text-xs text-[#858585]">
+                Loading GLOSPRINT product catalog...
+              </div>
+            }
+          >
+            <CatalogView />
+          </Suspense>
+        </div>
       </div>
 
       {/* Conversion Banner */}

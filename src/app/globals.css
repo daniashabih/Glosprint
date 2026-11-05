@@ -3,131 +3,75 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #171717;
-  --surface: #F7F7F9;
-  --card: #FFFFFF;
-  --card-hover: #FAFAF7;
-  --border: #E5E5E5;
-  --border-subtle: #EAEAEA;
-  --text-muted: #666666;
-  --gold: #C8A45D;
-  --gold-light: #DFCA95;
-  --gold-dark: #A6833D;
-  --gold-muted: #F8F5EC;
-  --offwhite: #F7F7F9;
-  --border-light: #E5E5E5;
-}
-
-.dark {
-  --background: #101114;
+  /* GLOSPRINT Global Dark Design System */
+  --background: #080808;
+  --background-secondary: #101010;
+  --background-section: #141414;
   --foreground: #FFFFFF;
-  --surface: #181A20;
-  --card: #1C1F26;
-  --card-hover: #232732;
-  --border: #30333B;
-  --border-subtle: #272B35;
-  --text-muted: #A1A1AA;
+  --surface: #141414;
+  --card: #191919;
+  --card-foreground: #FFFFFF;
+  --elevated: #202020;
+  --border: #2B2B2B;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+  --text-muted: #858585;
   --gold: #C8A45D;
   --gold-light: #DFCA95;
   --gold-dark: #A6833D;
-  --gold-muted: #242118;
-  --offwhite: #181A20;
-  --border-light: #30333B;
+  --charcoal: #080808;
+  --offwhite: #101010;
+  --border-light: #2B2B2B;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-section: var(--background-section);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-card: var(--card);
-  --color-card-hover: var(--card-hover);
+  --color-card-foreground: var(--card-foreground);
+  --color-elevated: var(--elevated);
   --color-border: var(--border);
-  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
-  --color-gold-muted: var(--gold-muted);
+  --color-charcoal: var(--charcoal);
   --color-offwhite: var(--offwhite);
   --color-border-light: var(--border-light);
-  --font-serif: var(--font-playfair);
   --font-sans: var(--font-sans);
+  --font-serif: var(--font-playfair);
 }
 
 html {
-  scroll-behavior: smooth;
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #080808;
+  color: #FFFFFF;
+  color-scheme: dark;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  overflow-x: hidden;
-  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+  background-color: #080808;
+  color: #FFFFFF;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Layered transitions for theme change */
-header,
-footer,
-nav,
-.card-luxury,
-input,
+/* Ensure native form elements and dropdown options use dark surfaces */
 select,
+input,
 textarea {
-  transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease, box-shadow 250ms ease;
+  color-scheme: dark;
 }
 
-/* Custom Luxury Gold Gradient Utilities */
-.gold-gradient-text {
-  background: linear-gradient(135deg, #A6833D 0%, #C8A45D 50%, #DFCA95 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+select option {
+  background-color: #191919;
+  color: #FFFFFF;
 }
 
-.gold-gradient-bg {
-  background: linear-gradient(135deg, #A6833D 0%, #C8A45D 50%, #DFCA95 100%);
-}
-
-.gold-border-glow:hover {
-  box-shadow: 0 0 25px rgba(200, 164, 93, 0.25);
-  border-color: #C8A45D;
-}
-
-.card-luxury {
-  background: var(--card);
-  border: 1px solid var(--border);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-luxury:hover {
-  border-color: #C8A45D;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(200, 164, 93, 0.18);
-}
-
-.dark .card-luxury:hover {
-  border-color: #DFCA95;
-  box-shadow: 0 12px 30px -10px rgba(200, 164, 93, 0.3);
-}
-
-/* Form inputs focus styles */
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+/* Custom utility classes for editorial typography */
+.font-serif-editorial {
+  font-family: var(--font-playfair), Georgia, serif;
 }

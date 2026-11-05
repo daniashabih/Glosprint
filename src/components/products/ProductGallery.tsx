@@ -20,7 +20,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
   return (
     <div className="space-y-4">
       {/* Main Image Container */}
-      <div className="relative aspect-4/3 sm:aspect-16/11 bg-[#F9F9F9] border border-[#EAEAEA] rounded-xs overflow-hidden shadow-xs">
+      <div className="relative aspect-4/3 sm:aspect-16/11 bg-[#141414] border border-[#2B2B2B] rounded-xs overflow-hidden shadow-xl">
         <Image
           src={currentImage}
           alt={`${productName} view ${activeImageIndex + 1}`}
@@ -29,7 +29,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover object-center transition-all duration-300"
         />
-        <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-xs text-white text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-xs">
+        <div className="absolute bottom-3 left-3 bg-[#080808]/85 backdrop-blur-xs text-[#B3B3B3] border border-[#2B2B2B] text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-xs">
           Visual Sample • Configurable Specification
         </div>
       </div>
@@ -41,10 +41,10 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             <button
               key={idx}
               onClick={() => setActiveImageIndex(idx)}
-              className={`relative w-20 h-16 shrink-0 rounded-xs overflow-hidden border-2 transition-all ${
+              className={`relative w-20 h-16 shrink-0 rounded-xs overflow-hidden border-2 transition-all cursor-pointer bg-[#141414] ${
                 activeImageIndex === idx
-                  ? "border-[#C8A45D] shadow-xs"
-                  : "border-[#EAEAEA] hover:border-neutral-400 opacity-70 hover:opacity-100"
+                  ? "border-[#C8A45D] shadow-md opacity-100"
+                  : "border-[#2B2B2B] hover:border-[#858585] opacity-65 hover:opacity-100"
               }`}
               aria-label={`View ${productName} image ${idx + 1}`}
             >
