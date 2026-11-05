@@ -164,21 +164,23 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  metaDescription: string;
+  metaDescription?: string;
   category: string;
   image: string;
   publishDate: string;
+  date?: string;
   readTime: string;
   author: {
     name: string;
     role: string;
   };
   tags: string[];
-  introduction: string;
-  sections: BlogSection[];
-  keyTakeaways: string[];
-  relatedProductSlugs: string[];
-  relatedArticleSlugs: string[];
+  introduction?: string;
+  sections?: BlogSection[];
+  keyTakeaways?: string[];
+  relatedProductSlugs?: string[];
+  relatedArticleSlugs?: string[];
+  content?: string[];
 }
 
 // -------------------------------------------------------------
