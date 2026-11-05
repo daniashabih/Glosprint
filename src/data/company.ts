@@ -1,9 +1,18 @@
 export const companyInfo = {
   name: "GLOSPRINT",
   legalName: "Glosprint Creative & Commercial Printing LLC",
-  tagline: "Where Print Meets Glamour.",
+  tagline: "Premium Printing & Creative Branding Solutions",
   description:
-    "Dubai's premier commercial printing house specializing in luxury packaging, precision offset, high-definition digital printing, corporate stationery, and architectural signage.",
+    "Dubai's premier commercial printing and creative branding house specializing in corporate printing, custom luxury packaging, high-definition marketing collateral, promotional merchandise, and precision signage with dedicated professional service.",
+  brandPillars: [
+    "Premium Printing Solutions",
+    "High-Quality Printing",
+    "Creative Branding",
+    "Corporate Printing",
+    "Custom Packaging",
+    "Promotional Merchandise",
+    "Professional Customer Service",
+  ],
   foundingYear: "2018",
   phone: "+971 4 345 8921",
   phoneDisplay: "+971 4 345 8921",

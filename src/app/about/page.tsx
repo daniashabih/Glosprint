@@ -61,7 +61,7 @@ export default function AboutPage() {
               Our Heritage & Vision
             </span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-light text-[#171717] font-serif leading-tight">
-              Where Print Meets Glamour.
+              Premium Printing & Creative Branding.
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-600 font-light leading-relaxed">
               Founded in Dubai, GLOSPRINT was conceived to bridge the divide between industrial manufacturing efficiency and bespoke haute-couture print craftsmanship.

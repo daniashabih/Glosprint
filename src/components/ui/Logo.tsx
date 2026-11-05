@@ -26,11 +26,11 @@ export default function Logo({
     <Link
       href="/"
       className={`inline-flex items-center shrink-0 transition-opacity hover:opacity-90 ${className}`}
-      aria-label="GLOSPRINT Home - Where Print Meets Glamour"
+      aria-label="GLOSPRINT — Premium Printing & Creative Branding"
     >
       <Image
         src="/logo/glosprint-logo.png"
-        alt="GLOSPRINT — Where Print Meets Glamour — Dubai"
+        alt="GLOSPRINT — Premium Printing & Creative Branding"
         width={width}
         height={height}
         priority={priority}

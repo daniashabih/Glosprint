@@ -23,11 +23,11 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "GLOSPRINT — Luxury Printing Press & Creative Solutions in Dubai",
+    default: "GLOSPRINT — Premium Printing Solutions & Creative Branding in Dubai",
     template: "%s | GLOSPRINT Dubai",
   },
   description:
-    "Dubai's premier commercial and luxury printing press. Specializing in bespoke business cards, gold foil packaging, corporate stationery, large format signage, and offset printing. Where Print Meets Glamour.",
+    "Dubai's premier commercial printing and creative branding company. Specializing in bespoke business cards, custom packaging, corporate stationery, large format signage, and promotional merchandise.",
   keywords: [
     "Printing Press in Dubai",
     "Printing Services in Dubai",
@@ -39,15 +39,17 @@ export const metadata: Metadata = {
     "Offset Printing Dubai",
     "Digital Printing Dubai",
     "Corporate Printing Dubai",
+    "Promotional Merchandise Dubai",
+    "Custom Packaging Dubai",
   ],
   metadataBase: new URL(companyInfo.siteUrl),
   alternates: {
     canonical: companyInfo.siteUrl,
   },
   openGraph: {
-    title: "GLOSPRINT — Luxury Printing Press & Creative Solutions in Dubai",
+    title: "GLOSPRINT — Premium Printing Solutions & Creative Branding in Dubai",
     description:
-      "Where Print Meets Glamour. Dubai's luxury printing house for high-end packaging, foil business cards, corporate stationery, and large format displays.",
+      "Dubai's premier commercial printing and creative branding company for high-end packaging, foil business cards, corporate stationery, promotional merchandise, and large format displays.",
     url: companyInfo.siteUrl,
     siteName: "GLOSPRINT Dubai",
     locale: "en_AE",
@@ -57,15 +59,15 @@ export const metadata: Metadata = {
         url: "/logo/glosprint-logo-full.png",
         width: 1200,
         height: 630,
-        alt: "GLOSPRINT — Where Print Meets Glamour — Dubai, UAE",
+        alt: "GLOSPRINT — Premium Printing & Creative Branding — Dubai, UAE",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GLOSPRINT — Luxury Printing Press Dubai",
+    title: "GLOSPRINT — Premium Printing & Creative Branding Dubai",
     description:
-      "Where Print Meets Glamour. Premier luxury printing solutions in Dubai, UAE.",
+      "Premium printing solutions, custom packaging, corporate stationery, and creative branding in Dubai, UAE.",
     images: ["/logo/glosprint-logo-full.png"],
   },
   verification: {

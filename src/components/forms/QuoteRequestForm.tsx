@@ -2,9 +2,16 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { MessageSquare, Mail, CheckCircle2, ShieldCheck, Zap, Sparkles } from "lucide-react";
+import { MessageSquare, Mail, CheckCircle2, ShieldCheck, Zap, Sparkles, AlertCircle } from "lucide-react";
 import { services } from "@/data/services";
 import { QuoteFormData, createQuoteWhatsAppUrl, createQuoteMailtoUrl } from "@/lib/whatsapp";
+
+interface FormErrors {
+  fullName?: string;
+  email?: string;
+  phone?: string;
+  quantity?: string;
+}
 
 export default function QuoteRequestForm() {
   const searchParams = useSearchParams();
@@ -23,14 +30,43 @@ export default function QuoteRequestForm() {
     notes: "",
   }));
 
+  const [errors, setErrors] = useState<FormErrors>({});
   const [lastAction, setLastAction] = useState<"whatsapp" | "email" | null>(null);
+
+  const validate = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Please enter your name.";
+    } else if (formData.fullName.trim().length < 2) {
+      newErrors.fullName = "Name must be at least 2 characters.";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = "Please enter your email.";
+    } else if (!emailRegex.test(formData.email.trim())) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Please enter your phone / WhatsApp.";
+    } else if (formData.phone.trim().replace(/[^0-9]/g, "").length < 7) {
+      newErrors.phone = "Please enter a valid phone number.";
+    }
+
+    if (!formData.quantity) {
+      newErrors.quantity = "Please choose a quantity.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmitWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.phone || !formData.quantity) {
-      alert("Please fill in your name, phone number, and required quantity.");
-      return;
-    }
+    if (!validate()) return;
+
     const url = createQuoteWhatsAppUrl(formData);
     setLastAction("whatsapp");
     window.open(url, "_blank");
@@ -38,10 +74,8 @@ export default function QuoteRequestForm() {
 
   const handleSubmitMailto = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.email || !formData.quantity) {
-      alert("Please fill in your name, email, and required quantity.");
-      return;
-    }
+    if (!validate()) return;
+
     const url = createQuoteMailtoUrl(formData);
     setLastAction("email");
     window.location.href = url;
@@ -65,20 +99,27 @@ export default function QuoteRequestForm() {
       {lastAction && (
         <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xs flex items-start gap-3 text-emerald-800 text-sm">
           <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-          <div>
+          <div className="space-y-1">
             <p className="font-semibold">
               {lastAction === "whatsapp"
                 ? "Launching your pre-filled WhatsApp inquiry..."
                 : "Launching your pre-formatted email draft..."}
             </p>
-            <p className="text-xs text-emerald-700 mt-0.5">
+            <p className="text-xs text-emerald-700">
               Your detailed printing parameters have been compiled. Simply press send in the opened window.
             </p>
           </div>
         </div>
       )}
 
-      <form className="space-y-6">
+      {Object.keys(errors).length > 0 && (
+        <div className="p-4 bg-rose-50 border border-rose-200 rounded-xs flex items-start gap-2.5 text-rose-800 text-xs">
+          <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+          <span>Please fill in the required contact information below.</span>
+        </div>
+      )}
+
+      <form className="space-y-6" noValidate>
         {/* Customer Contact Details */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold uppercase tracking-wider text-[#171717] border-l-2 border-[#C8A45D] pl-3">
@@ -95,9 +136,15 @@ export default function QuoteRequestForm() {
                 required
                 placeholder="e.g. Sarah Jenkins"
                 value={formData.fullName}
-                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                onChange={(e) => {
+                  setFormData({ ...formData, fullName: e.target.value });
+                  if (errors.fullName) setErrors({ ...errors, fullName: undefined });
+                }}
+                className={`w-full px-4 py-3 bg-[#FAF9F6] border rounded-xs text-sm text-[#171717] focus:outline-hidden transition-colors ${
+                  errors.fullName ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] focus:border-[#C8A45D]"
+                }`}
               />
+              {errors.fullName && <p className="mt-1 text-xs text-rose-600">{errors.fullName}</p>}
             </div>
 
             <div>
@@ -109,9 +156,15 @@ export default function QuoteRequestForm() {
                 required
                 placeholder="s.jenkins@company.ae"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                onChange={(e) => {
+                  setFormData({ ...formData, email: e.target.value });
+                  if (errors.email) setErrors({ ...errors, email: undefined });
+                }}
+                className={`w-full px-4 py-3 bg-[#FAF9F6] border rounded-xs text-sm text-[#171717] focus:outline-hidden transition-colors ${
+                  errors.email ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] focus:border-[#C8A45D]"
+                }`}
               />
+              {errors.email && <p className="mt-1 text-xs text-rose-600">{errors.email}</p>}
             </div>
 
             <div>
@@ -123,9 +176,15 @@ export default function QuoteRequestForm() {
                 required
                 placeholder="+971 50 123 4567"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs text-sm text-[#171717] focus:outline-hidden focus:border-[#C8A45D]"
+                onChange={(e) => {
+                  setFormData({ ...formData, phone: e.target.value });
+                  if (errors.phone) setErrors({ ...errors, phone: undefined });
+                }}
+                className={`w-full px-4 py-3 bg-[#FAF9F6] border rounded-xs text-sm text-[#171717] focus:outline-hidden transition-colors ${
+                  errors.phone ? "border-rose-400 focus:border-rose-500" : "border-[#EAEAEA] focus:border-[#C8A45D]"
+                }`}
               />
+              {errors.phone && <p className="mt-1 text-xs text-rose-600">{errors.phone}</p>}
             </div>
           </div>
         </div>
