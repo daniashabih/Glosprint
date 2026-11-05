@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/ui/FloatingActions";
 import JsonLd from "@/components/seo/JsonLd";
 import GoogleAnalytics from "@/components/seo/GoogleAnalytics";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { companyInfo } from "@/data/company";
 import { createOrganizationSchema, createLocalBusinessSchema } from "@/lib/structured-data";
 
@@ -90,19 +91,43 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${jakartaSans.variable} ${playfairDisplay.variable} scroll-smooth antialiased`}
     >
       <head>
         <link rel="icon" href="/logo/glosprint-icon.png" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('glosprint-theme');
+                  if (saved === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('data-theme', 'light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-[#171717] font-sans selection:bg-[#C8A45D]/20 selection:text-[#171717]">
-        <GoogleAnalytics />
-        <JsonLd data={orgSchema} />
-        <JsonLd data={localBusinessSchema} />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <FloatingActions />
+      <body
+        suppressHydrationWarning
+        className="min-h-screen flex flex-col bg-white dark:bg-[#101114] text-[#171717] dark:text-white font-sans selection:bg-[#C8A45D]/20 selection:text-[#171717] dark:selection:text-white"
+      >
+        <ThemeProvider>
+          <GoogleAnalytics />
+          <JsonLd data={orgSchema} />
+          <JsonLd data={localBusinessSchema} />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <FloatingActions />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ import { printingProcess } from "@/data/home";
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-20 md:py-28 bg-white border-b border-[#EAEAEA]">
+    <section id="process" className="py-20 md:py-28 bg-white dark:bg-[#101114] border-b border-[#EAEAEA] dark:border-[#30333B] transition-colors duration-250">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           overline="Artisan Methodology"
@@ -16,25 +16,25 @@ export default function ProcessSection() {
             {printingProcess.map((step) => (
               <div
                 key={step.step}
-                className="relative flex flex-col p-6 bg-[#FAF9F6] border border-[#EAEAEA] rounded-xs transition-all duration-300 hover:border-[#C8A45D] hover:bg-white hover:shadow-lg group"
+                className="relative flex flex-col p-6 bg-[#FAF9F6] dark:bg-[#1C1F26] border border-[#EAEAEA] dark:border-[#30333B] rounded-xs transition-all duration-300 hover:border-[#C8A45D] dark:hover:border-[#DFCA95] hover:bg-white dark:hover:bg-[#232732] hover:shadow-lg group"
               >
                 {/* Step Number Display */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-3xl font-light font-serif text-[#C8A45D] group-hover:text-[#A6833D] transition-colors">
+                  <span className="text-3xl font-light font-serif text-[#C8A45D] dark:text-[#DFCA95] group-hover:text-[#A6833D] transition-colors">
                     {step.step}
                   </span>
                   <div className="w-8 h-px bg-[#C8A45D]/40" />
                 </div>
 
-                <h3 className="text-base font-semibold text-[#171717] mb-2 font-serif leading-snug">
+                <h3 className="text-base font-semibold text-[#171717] dark:text-white mb-2 font-serif leading-snug">
                   {step.title}
                 </h3>
 
-                <p className="text-xs text-neutral-600 leading-relaxed font-light mb-3">
+                <p className="text-xs text-neutral-600 dark:text-[#A1A1AA] leading-relaxed font-light mb-3">
                   {step.description}
                 </p>
 
-                <p className="text-[11px] text-neutral-500 pt-3 border-t border-[#EAEAEA] leading-relaxed">
+                <p className="text-[11px] text-neutral-500 dark:text-neutral-400 pt-3 border-t border-[#EAEAEA] dark:border-[#30333B] leading-relaxed">
                   {step.detail}
                 </p>
               </div>

@@ -9,6 +9,7 @@ import { companyInfo } from "@/data/company";
 import { productCategories } from "@/data/categories";
 import { createWhatsAppChatUrl } from "@/lib/whatsapp";
 import Logo from "@/components/ui/Logo";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function MobileNav() {
     <div className="lg:hidden flex items-center">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 text-[#171717] hover:text-[#C8A45D] transition-colors focus:outline-hidden"
+        className="p-2 text-[#171717] dark:text-neutral-200 hover:text-[#C8A45D] dark:hover:text-[#DFCA95] transition-colors focus:outline-hidden"
         aria-label={isOpen ? "Close Menu" : "Open Menu"}
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -42,7 +43,7 @@ export default function MobileNav() {
       {/* Mobile Drawer Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs transition-opacity"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity"
           onClick={() => {
             setIsOpen(false);
             setShowCategoryDrawer(false);
@@ -52,19 +53,19 @@ export default function MobileNav() {
 
       {/* Slide-out Drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-white dark:bg-[#101114] border-l border-[#EAEAEA] dark:border-[#30333B] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Top Header of Drawer */}
-        <div className="flex items-center justify-between p-5 border-b border-[#EAEAEA]">
+        <div className="flex items-center justify-between p-5 border-b border-[#EAEAEA] dark:border-[#30333B]">
           <Logo size="sm" />
           <button
             onClick={() => {
               setIsOpen(false);
               setShowCategoryDrawer(false);
             }}
-            className="p-2 text-neutral-500 hover:text-[#171717]"
+            className="p-2 text-neutral-500 hover:text-[#171717] dark:hover:text-white transition-colors"
             aria-label="Close Menu"
           >
             <X className="w-6 h-6" />
@@ -73,15 +74,20 @@ export default function MobileNav() {
 
         {/* Drawer Content */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          {/* Appearance / Theme Switcher in Mobile Drawer */}
+          <div>
+            <ThemeToggle variant="mobile" />
+          </div>
+
           <nav className="flex flex-col space-y-3">
             {headerNav.map((item) => {
               const isActive = pathname === item.href;
               if (item.children) {
                 return (
-                  <div key={item.href} className="border-b border-[#EAEAEA]/60 pb-3">
+                  <div key={item.href} className="border-b border-[#EAEAEA]/60 dark:border-[#30333B] pb-3">
                     <button
                       onClick={() => setShowCategoryDrawer(!showCategoryDrawer)}
-                      className="w-full text-base font-semibold text-[#171717] hover:text-[#C8A45D] py-1 flex items-center justify-between transition-colors"
+                      className="w-full text-base font-semibold text-[#171717] dark:text-neutral-100 hover:text-[#C8A45D] dark:hover:text-[#DFCA95] py-1 flex items-center justify-between transition-colors"
                     >
                       <span>{item.title}</span>
                       <ChevronRight
@@ -91,11 +97,11 @@ export default function MobileNav() {
                       />
                     </button>
                     {showCategoryDrawer && (
-                      <div className="mt-2 pl-3 space-y-2 border-l-2 border-[#C8A45D]/30">
+                      <div className="mt-2 pl-3 space-y-2 border-l-2 border-[#C8A45D]/40">
                         <Link
                           href="/products"
                           onClick={() => setIsOpen(false)}
-                          className="block text-xs font-semibold text-[#C8A45D] py-1"
+                          className="block text-xs font-semibold text-[#C8A45D] dark:text-[#DFCA95] py-1"
                         >
                           View All Products →
                         </Link>
@@ -104,7 +110,7 @@ export default function MobileNav() {
                             key={cat.id}
                             href={`/products?category=${cat.id}`}
                             onClick={() => setIsOpen(false)}
-                            className="block text-xs text-neutral-600 hover:text-[#171717] py-1"
+                            className="block text-xs text-neutral-600 dark:text-neutral-400 hover:text-[#171717] dark:hover:text-white py-1"
                           >
                             {cat.name}
                           </Link>
@@ -122,8 +128,8 @@ export default function MobileNav() {
                   onClick={() => setIsOpen(false)}
                   className={`text-base font-medium transition-colors py-1 flex items-center justify-between ${
                     isActive
-                      ? "text-[#C8A45D] font-semibold"
-                      : "text-[#171717] hover:text-[#C8A45D]"
+                      ? "text-[#C8A45D] dark:text-[#DFCA95] font-semibold"
+                      : "text-[#171717] dark:text-neutral-200 hover:text-[#C8A45D] dark:hover:text-[#DFCA95]"
                   }`}
                 >
                   <span>{item.title}</span>
@@ -136,19 +142,19 @@ export default function MobileNav() {
           {/* Direct CTA */}
           <div className="pt-2">
             <Link
-              href="/request-quote"
+              href="/request-a-quote"
               onClick={() => setIsOpen(false)}
-              className="w-full inline-flex items-center justify-center px-5 py-3 text-xs font-semibold uppercase tracking-wider bg-[#171717] text-white hover:bg-[#C8A45D] transition-colors rounded-xs shadow-xs"
+              className="w-full inline-flex items-center justify-center px-5 py-3 text-xs font-semibold uppercase tracking-wider bg-[#171717] dark:bg-[#C8A45D] text-white dark:text-[#101114] hover:bg-[#C8A45D] dark:hover:bg-[#DFCA95] transition-colors rounded-xs shadow-xs"
             >
               Request a Custom Quote
             </Link>
           </div>
 
           {/* Drawer Footer Contact */}
-          <div className="pt-6 border-t border-[#EAEAEA] space-y-3">
+          <div className="pt-6 border-t border-[#EAEAEA] dark:border-[#30333B] space-y-3">
             <a
               href={`tel:${companyInfo.phone}`}
-              className="flex items-center gap-3 text-xs text-neutral-600 hover:text-[#C8A45D] transition-colors"
+              className="flex items-center gap-3 text-xs text-neutral-600 dark:text-neutral-400 hover:text-[#C8A45D] dark:hover:text-[#DFCA95] transition-colors"
             >
               <Phone className="w-4 h-4 text-[#C8A45D]" />
               <span>{companyInfo.phoneDisplay}</span>
@@ -157,7 +163,7 @@ export default function MobileNav() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-xs text-emerald-700 font-medium hover:text-emerald-800 transition-colors"
+              className="flex items-center gap-3 text-xs text-emerald-700 dark:text-emerald-400 font-medium hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Chat on WhatsApp</span>

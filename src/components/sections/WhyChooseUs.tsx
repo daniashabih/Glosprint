@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#FAF9F6] border-b border-[#EAEAEA]">
+    <section className="py-20 md:py-28 bg-[#FAF9F6] dark:bg-[#181A20] border-b border-[#EAEAEA] dark:border-[#30333B] transition-colors duration-250">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           overline="The GLOSPRINT Distinction"
@@ -26,17 +26,17 @@ export default function WhyChooseUs() {
           {whyChooseGlosprint.map((pillar) => (
             <div
               key={pillar.title}
-              className="p-8 bg-white border border-[#EAEAEA] rounded-xs transition-all duration-300 hover:border-[#C8A45D] hover:shadow-lg space-y-4"
+              className="p-8 bg-white dark:bg-[#1C1F26] border border-[#EAEAEA] dark:border-[#30333B] rounded-xs transition-all duration-300 hover:border-[#C8A45D] dark:hover:border-[#DFCA95] hover:shadow-lg space-y-4"
             >
-              <div className="w-12 h-12 rounded-xs bg-[#FAF9F6] border border-[#C8A45D]/30 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xs bg-[#FAF9F6] dark:bg-[#101114] border border-[#C8A45D]/30 flex items-center justify-center">
                 {iconMap[pillar.icon]}
               </div>
 
-              <h3 className="text-xl font-medium text-[#171717] font-serif">
+              <h3 className="text-xl font-medium text-[#171717] dark:text-white font-serif">
                 {pillar.title}
               </h3>
 
-              <p className="text-sm text-neutral-600 leading-relaxed font-light">
+              <p className="text-sm text-neutral-600 dark:text-[#A1A1AA] leading-relaxed font-light">
                 {pillar.description}
               </p>
             </div>
@@ -44,16 +44,16 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Quantitative Benchmark Stats */}
-        <div className="mt-16 pt-12 border-t border-[#EAEAEA] grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="mt-16 pt-12 border-t border-[#EAEAEA] dark:border-[#30333B] grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {keyStats.map((stat) => (
             <div key={stat.label} className="space-y-1">
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#171717] font-serif tracking-tight">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#171717] dark:text-white font-serif tracking-tight">
                 <span className="text-[#C8A45D]">{stat.value}</span>
               </p>
-              <p className="text-sm font-semibold uppercase tracking-wider text-[#171717]">
+              <p className="text-sm font-semibold uppercase tracking-wider text-[#171717] dark:text-neutral-200">
                 {stat.label}
               </p>
-              <p className="text-xs text-neutral-500">
+              <p className="text-xs text-neutral-500 dark:text-neutral-400">
                 {stat.sublabel}
               </p>
             </div>

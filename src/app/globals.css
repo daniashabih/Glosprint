@@ -1,19 +1,50 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
+  --background: #FFFFFF;
   --foreground: #171717;
+  --surface: #F7F7F9;
+  --card: #FFFFFF;
+  --card-hover: #FAFAF7;
+  --border: #E5E5E5;
+  --border-subtle: #EAEAEA;
+  --text-muted: #666666;
   --gold: #C8A45D;
   --gold-light: #DFCA95;
   --gold-dark: #A6833D;
   --gold-muted: #F8F5EC;
-  --offwhite: #FAF9F6;
-  --border-light: #EAEAEA;
+  --offwhite: #F7F7F9;
+  --border-light: #E5E5E5;
+}
+
+.dark {
+  --background: #101114;
+  --foreground: #FFFFFF;
+  --surface: #181A20;
+  --card: #1C1F26;
+  --card-hover: #232732;
+  --border: #30333B;
+  --border-subtle: #272B35;
+  --text-muted: #A1A1AA;
+  --gold: #C8A45D;
+  --gold-light: #DFCA95;
+  --gold-dark: #A6833D;
+  --gold-muted: #242118;
+  --offwhite: #181A20;
+  --border-light: #30333B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-muted: var(--text-muted);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
@@ -26,15 +57,27 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #ffffff;
-  color: #171717;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 body {
-  background-color: #ffffff;
-  color: #171717;
+  background-color: var(--background);
+  color: var(--foreground);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
+  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+}
+
+/* Layered transitions for theme change */
+header,
+footer,
+nav,
+.card-luxury,
+input,
+select,
+textarea {
+  transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease, box-shadow 250ms ease;
 }
 
 /* Custom Luxury Gold Gradient Utilities */
@@ -49,18 +92,42 @@ body {
 }
 
 .gold-border-glow:hover {
-  box-shadow: 0 0 25px rgba(200, 164, 93, 0.2);
+  box-shadow: 0 0 25px rgba(200, 164, 93, 0.25);
   border-color: #C8A45D;
 }
 
 .card-luxury {
-  background: #ffffff;
-  border: 1px solid #EAEAEA;
+  background: var(--card);
+  border: 1px solid var(--border);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-luxury:hover {
   border-color: #C8A45D;
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(200, 164, 93, 0.15);
+  box-shadow: 0 12px 30px -10px rgba(200, 164, 93, 0.18);
+}
+
+.dark .card-luxury:hover {
+  border-color: #DFCA95;
+  box-shadow: 0 12px 30px -10px rgba(200, 164, 93, 0.3);
+}
+
+/* Form inputs focus styles */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

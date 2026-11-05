@@ -1,14 +1,15 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import QuoteRequestForm from "@/components/forms/QuoteRequestForm";
+import InteractiveQuoteEstimator from "@/components/quote/InteractiveQuoteEstimator";
+import HowItWorks from "@/components/sections/HowItWorks";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Request a Printing Quote | GLOSPRINT Dubai",
   description:
     "Request an instant custom quotation for luxury business cards, rigid boxes, packaging, brochures, corporate stationery, and large format printing in Dubai.",
-  canonicalPath: "/request-a-quote",
+  canonicalPath: "/request-quote",
   keywords: [
     "Printing Quotation Dubai",
     "Instant Print Quote UAE",
@@ -23,8 +24,8 @@ export default function RequestAQuotePage() {
       {/* Page Header */}
       <div className="bg-[#FAF9F6] border-b border-[#EAEAEA] py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ name: "Request a Quote", url: "/request-a-quote" }]} />
-          
+          <Breadcrumbs items={[{ name: "Request a Quote", url: "/request-quote" }]} />
+
           <div className="mt-6 max-w-3xl">
             <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#C8A45D]">
               Fast Quotation System
@@ -40,13 +41,15 @@ export default function RequestAQuotePage() {
       </div>
 
       {/* Form Container with Suspense boundary */}
-      <section className="py-20 md:py-28 bg-white border-b border-[#EAEAEA]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 md:py-24 bg-white border-b border-[#EAEAEA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Suspense fallback={<div className="p-12 text-center text-sm text-neutral-500">Loading quotation calculator...</div>}>
-            <QuoteRequestForm />
+            <InteractiveQuoteEstimator />
           </Suspense>
         </div>
       </section>
+
+      <HowItWorks />
     </>
   );
 }

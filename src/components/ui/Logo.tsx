@@ -34,7 +34,7 @@ export default function Logo({
         width={width}
         height={height}
         priority={priority}
-        className={`h-auto w-auto object-contain ${maxH}`}
+        className={`h-auto w-auto object-contain ${maxH} dark:brightness-0 dark:invert transition-all duration-300`}
       />
     </Link>
   );

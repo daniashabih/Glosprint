@@ -7,7 +7,7 @@ export default function CtaBanner() {
   const whatsappUrl = createWhatsAppChatUrl();
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28 bg-[#171717] text-white">
+    <section className="relative overflow-hidden py-20 md:py-28 bg-[#171717] dark:bg-[#181A20] border-t border-b border-transparent dark:border-[#30333B] text-white transition-colors duration-250">
       {/* Subtle Gold Ambient Gradient Accents */}
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#C8A45D]/10 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#C8A45D]/10 blur-3xl pointer-events-none" />
