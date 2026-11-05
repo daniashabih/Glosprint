@@ -9,7 +9,6 @@ import { companyInfo } from "@/data/company";
 import { productCategories } from "@/data/categories";
 import { createWhatsAppChatUrl } from "@/lib/whatsapp";
 import Logo from "@/components/ui/Logo";
-import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +33,7 @@ export default function MobileNav() {
     <div className="lg:hidden flex items-center">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 text-[#171717] dark:text-white hover:text-[#C8A45D] transition-colors focus:outline-hidden cursor-pointer"
+        className="p-2 text-white hover:text-[#C8A45D] transition-colors focus:outline-hidden cursor-pointer"
         aria-label={isOpen ? "Close Menu" : "Open Menu"}
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -43,7 +42,7 @@ export default function MobileNav() {
       {/* Mobile Drawer Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/60 dark:bg-black/80 backdrop-blur-xs transition-opacity"
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs transition-opacity"
           onClick={() => {
             setIsOpen(false);
             setShowCategoryDrawer(false);
@@ -53,19 +52,19 @@ export default function MobileNav() {
 
       {/* Slide-out Drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-white dark:bg-[#101114] border-l border-[#E5E5E5] dark:border-[#30333B] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-[#080808] border-l border-[#2B2B2B] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Top Header of Drawer */}
-        <div className="flex items-center justify-between p-5 bg-[#F7F7F9] dark:bg-[#181A20] border-b border-[#E5E5E5] dark:border-[#30333B]">
+        <div className="flex items-center justify-between p-5 bg-[#101010] border-b border-[#2B2B2B]">
           <Logo size="sm" />
           <button
             onClick={() => {
               setIsOpen(false);
               setShowCategoryDrawer(false);
             }}
-            className="p-2 text-[#666666] dark:text-[#A1A1AA] hover:text-[#171717] dark:hover:text-white transition-colors cursor-pointer"
+            className="p-2 text-[#B3B3B3] hover:text-white transition-colors cursor-pointer"
             aria-label="Close Menu"
           >
             <X className="w-6 h-6" />
@@ -83,13 +82,13 @@ export default function MobileNav() {
 
               if (item.children) {
                 return (
-                  <div key={item.href} className="border-b border-[#E5E5E5] dark:border-[#30333B] pb-3">
+                  <div key={item.href} className="border-b border-[#2B2B2B] pb-3">
                     <button
                       onClick={() => setShowCategoryDrawer(!showCategoryDrawer)}
                       className={`w-full text-base font-semibold py-1 flex items-center justify-between transition-colors cursor-pointer ${
                         isActive
                           ? "text-[#C8A45D]"
-                          : "text-[#171717] dark:text-white hover:text-[#C8A45D]"
+                          : "text-white hover:text-[#C8A45D]"
                       }`}
                     >
                       <span>{item.title}</span>
@@ -113,7 +112,7 @@ export default function MobileNav() {
                             key={cat.id}
                             href={`/products?category=${cat.id}`}
                             onClick={() => setIsOpen(false)}
-                            className="block text-xs text-[#666666] dark:text-[#A1A1AA] hover:text-[#171717] dark:hover:text-white py-1 transition-colors"
+                            className="block text-xs text-[#B3B3B3] hover:text-white py-1 transition-colors"
                           >
                             {cat.name}
                           </Link>
@@ -132,37 +131,32 @@ export default function MobileNav() {
                   className={`text-base font-medium transition-colors py-1 flex items-center justify-between ${
                     isActive
                       ? "text-[#C8A45D] font-semibold"
-                      : "text-[#171717] dark:text-white hover:text-[#C8A45D]"
+                      : "text-white hover:text-[#C8A45D]"
                   }`}
                 >
                   <span>{item.title}</span>
-                  <ArrowRight className={`w-4 h-4 ${isActive ? "text-[#C8A45D]" : "text-[#888888] dark:text-[#71717A]"}`} />
+                  <ArrowRight className={`w-4 h-4 ${isActive ? "text-[#C8A45D]" : "text-[#858585]"}`} />
                 </Link>
               );
             })}
           </nav>
-
-          {/* Theme Switch in Mobile Drawer */}
-          <div className="pt-2">
-            <ThemeToggle variant="mobile" />
-          </div>
 
           {/* Direct CTA */}
           <div className="pt-2">
             <Link
               href="/request-a-quote"
               onClick={() => setIsOpen(false)}
-              className="w-full inline-flex items-center justify-center px-5 py-3.5 text-xs font-bold uppercase tracking-wider bg-[#C8A45D] text-[#101114] hover:bg-[#DFCA95] transition-colors rounded-xs shadow-md"
+              className="w-full inline-flex items-center justify-center px-5 py-3.5 text-xs font-bold uppercase tracking-wider bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] transition-colors rounded-xs shadow-md"
             >
               Request a Custom Quote
             </Link>
           </div>
 
           {/* Drawer Footer Contact */}
-          <div className="pt-6 border-t border-[#E5E5E5] dark:border-[#30333B] space-y-3">
+          <div className="pt-6 border-t border-[#2B2B2B] space-y-3">
             <a
               href={`tel:${companyInfo.phone}`}
-              className="flex items-center gap-3 text-xs text-[#666666] dark:text-[#A1A1AA] hover:text-[#C8A45D] transition-colors"
+              className="flex items-center gap-3 text-xs text-[#B3B3B3] hover:text-[#C8A45D] transition-colors"
             >
               <Phone className="w-4 h-4 text-[#C8A45D]" />
               <span>{companyInfo.phoneDisplay}</span>
@@ -171,7 +165,7 @@ export default function MobileNav() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-xs text-emerald-600 dark:text-emerald-400 font-medium hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors"
+              className="flex items-center gap-3 text-xs text-emerald-400 font-medium hover:text-emerald-300 transition-colors"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Chat on WhatsApp</span>

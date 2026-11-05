@@ -30,15 +30,15 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      "bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] font-bold shadow-md hover:shadow-lg",
+      "bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] font-bold shadow-md hover:shadow-lg transition-colors",
     secondary:
-      "bg-[#191919] text-white hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] hover:text-[#C8A45D] shadow-xs",
+      "bg-[#191919] text-white hover:bg-[#202020] border border-[#2B2B2B] hover:border-[#C8A45D] hover:text-[#C8A45D] shadow-xs transition-colors",
     gold:
-      "bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] font-bold shadow-md hover:shadow-lg",
+      "bg-[#C8A45D] text-[#080808] hover:bg-[#DFCA95] border border-[#C8A45D] hover:border-[#DFCA95] font-bold shadow-md hover:shadow-lg transition-colors",
     outline:
-      "bg-transparent text-white hover:text-[#C8A45D] border border-[#C8A45D] hover:border-[#DFCA95] hover:bg-[#191919]",
+      "bg-transparent text-white hover:text-[#C8A45D] border border-[#C8A45D] hover:border-[#DFCA95] hover:bg-[#191919] transition-colors",
     ghost:
-      "bg-transparent text-[#B3B3B3] hover:text-[#C8A45D] hover:bg-[#191919] border border-transparent",
+      "bg-transparent text-[#B3B3B3] hover:text-[#C8A45D] hover:bg-[#191919] border border-transparent transition-colors",
   };
 
   const baseClasses =
