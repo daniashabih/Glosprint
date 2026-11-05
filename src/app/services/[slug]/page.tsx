@@ -8,13 +8,13 @@ import {
   Sparkles,
   ArrowRight,
   MessageSquare,
-  HelpCircle,
   FileCheck,
   Package,
 } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import Button from "@/components/ui/Button";
 import JsonLd from "@/components/seo/JsonLd";
+import FaqAccordion from "@/components/ui/FaqAccordion";
 import CtaBanner from "@/components/sections/CtaBanner";
 import { services } from "@/data/services";
 import { createServiceSchema, createFAQSchema } from "@/lib/structured-data";
@@ -285,22 +285,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </h2>
             </div>
 
-            <div className="space-y-4">
-              {service.faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-white border border-[#EAEAEA] rounded-xs space-y-3"
-                >
-                  <h3 className="text-base font-semibold text-[#171717] flex items-start gap-2.5">
-                    <HelpCircle className="w-5 h-5 text-[#C8A45D] shrink-0 mt-0.5" />
-                    <span>{faq.question}</span>
-                  </h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed font-light pl-7">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <FaqAccordion faqs={service.faqs} />
           </div>
         </section>
       )}

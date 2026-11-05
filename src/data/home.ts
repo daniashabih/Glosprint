@@ -1,4 +1,4 @@
-import { IndustryItem, ProcessStep } from "@/types";
+import { IndustryItem, ProcessStep, FAQ } from "@/types";
 
 export const whyChooseGlosprint = [
   {
@@ -133,4 +133,37 @@ export const keyStats = [
   { value: "24h", label: "Express Turnaround", sublabel: "Same-Day Emergency Service in Dubai" },
   { value: "100%", label: "Pantone Color Accuracy", sublabel: "ISO 12647-2 Certified Printing" },
   { value: "500K+", label: "Daily Production Capacity", sublabel: "Heidelberg Multi-Color Automation" },
+];
+
+export const generalFaqs: FAQ[] = [
+  {
+    question: "What printing services does GLOSPRINT specialize in?",
+    answer:
+      "GLOSPRINT is a full-spectrum commercial and luxury printing press in Dubai. We specialize in bespoke business cards, rigid presentation boxes, cosmetic and perfume packaging, corporate stationery, multi-page brochures, PUR-bound catalogues, architectural 3D signage, exhibition displays, and high-volume offset lithography.",
+  },
+  {
+    question: "Can GLOSPRINT handle emergency or same-day printing in Dubai?",
+    answer:
+      "Yes. Our digital production atelier in Al Quoz operates high-speed digital presses capable of same-day and 24-hour turnaround for emergency event collateral, exhibition backdrops for DWTC, corporate pitch decks, and flyers.",
+  },
+  {
+    question: "Do you provide physical prototypes and paper sample swatches before production?",
+    answer:
+      "Absolutely. For custom boxes and packaging, we construct precision structural CAD white mockups to test physical fit and weight. For color-critical publications and branding, we provide certified digital proofs and invited consultations in our Al Quoz showroom.",
+  },
+  {
+    question: "What file formats and artwork parameters should I submit?",
+    answer:
+      "We recommend print-ready PDF files (PDF/X-1a or PDF/X-4) with fonts converted to outlines, images at 300+ DPI, CMYK color mode (or Pantone PMS codes for spot colors), and a standard 3mm bleed on all sides with crop marks.",
+  },
+  {
+    question: "How does GLOSPRINT guarantee color accuracy across large offset runs?",
+    answer:
+      "Our multi-color German Heidelberg offset presses are calibrated under ISO 12647-2 color management standards with computerized inline spectrophotometers continuously scanning ink density across the entire print run.",
+  },
+  {
+    question: "Do you deliver across Dubai, Abu Dhabi, and the rest of the UAE?",
+    answer:
+      "Yes. We operate our own dedicated temperature-controlled logistics fleet offering doorstep delivery across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, and GCC cross-border dispatches.",
+  },
 ];
