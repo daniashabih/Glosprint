@@ -1,92 +1,232 @@
 import { PortfolioItem } from "@/types";
 
+export const portfolioCategories = [
+  "All Projects",
+  "Business Cards",
+  "Corporate Stationery",
+  "Packaging",
+  "Marketing Materials",
+  "Stickers & Labels",
+  "Signage",
+  "Promotional Products",
+] as const;
+
 export const portfolioItems: PortfolioItem[] = [
+  // 1. Business Cards
   {
-    id: "elysian-haute-parfumerie",
-    title: "Elysian Haute Parfumerie Rigid Gift Box",
-    category: "Luxury Packaging",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
-    clientType: "Niche Luxury Perfume House, Dubai",
-    finishes: ["Champagne Gold Hot Foil", "Velvet Soft-Touch", "Concealed Neodymium Magnets"],
-    paperStock: "1800gsm Rigid Greyboard wrapped in 160gsm Fedrigoni Italian paper",
+    id: "elysian-gold-foil-business-cards",
+    title: "Aura Capital Executive Triplex Business Cards",
+    category: "Business Cards",
+    categorySlug: "business-cards",
+    image:
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589330694653-dad6d3240a2b?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Private Equity & Wealth Advisory (Demonstration Concept)",
+    finishes: ["Champagne Gold Hot Foil", "Velvet Soft-Touch Lamination", "Painted Metallic Edges"],
+    paperStock: "700 GSM Multi-Layer Triplex Board with Gold Color Core",
+    specs: [
+      { label: "Dimensions", value: "85 × 55 mm" },
+      { label: "Paper Weight", value: "700 GSM Triplex" },
+      { label: "Print Process", value: "Foil Stamping + Spot Pantone" },
+      { label: "Edge Finishing", value: "Hand-Gilded Champagne Gold" },
+    ],
     description:
-      "Handcrafted magnetic book-style presentation case with deep velvet-lined EVA foam cradling a 100ml crystal flacon. Features beveled gold foil stamping and precision laser die-cut reveals.",
+      "A demonstration concept engineered for high-stakes corporate introductions. Three heavyweight card layers laminated together with a metallic gold core, finished with front-and-back champagne gold foil and hand-painted edges.",
+    isDemonstration: true,
   },
+  {
+    id: "solis-embossed-business-cards",
+    title: "Solis Architectural Studio Blind Embossed Cards",
+    category: "Business Cards",
+    categorySlug: "business-cards",
+    image:
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Contemporary Design Studio (Demonstration Concept)",
+    finishes: ["Deep Blind Emboss", "Letterpress Inkless Impression", "Raw Deckle Edge"],
+    paperStock: "600 GSM 100% Pure Cotton Uncoated Board (Crane's Lettra)",
+    specs: [
+      { label: "Dimensions", value: "90 × 50 mm" },
+      { label: "Paper Stock", value: "600 GSM Cotton Pulp" },
+      { label: "Embossing", value: "Multi-Level Brass Die" },
+    ],
+    description:
+      "Demonstrating subtle architectural restraint. A deep tactile blind emboss creates quiet shadows across soft cotton fiber stock, celebrating pure texture and minimalism without surface ink.",
+    isDemonstration: true,
+  },
+
+  // 2. Corporate Stationery
   {
     id: "sovereign-partners-stationery",
-    title: "Sovereign Partners DIFC Executive Suite",
+    title: "Sovereign Legal Executive Corporate Suite",
     category: "Corporate Stationery",
-    image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80",
-    clientType: "Private Wealth Advisory, DIFC Dubai",
-    finishes: ["Micro-Embossed Crest", "Matte Gold Foil Stamping", "Color-Core Triplex Bonding"],
-    paperStock: "600gsm Cotton Triplex Board & 120gsm Watermarked Conqueror Wove",
+    categorySlug: "corporate-stationery",
+    image:
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589330694653-dad6d3240a2b?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "International Law Practice (Demonstration Concept)",
+    finishes: ["Micro-Embossed Crest", "Matte Gold Foil Stamping", "Conqueror Watermark"],
+    paperStock: "120 GSM Watermarked Conqueror Wove & 400 GSM Matching Folder Board",
+    specs: [
+      { label: "Suite Components", value: "A4 Letterhead, DL Envelope, Folder, Cards" },
+      { label: "Color Match", value: "Pantone 289 C Navy & Metallic Gold" },
+      { label: "Folder Pocket", value: "Die-cut card slit & 5mm spine" },
+    ],
     description:
-      "A complete executive stationery suite engineered for high-net-worth interactions. Includes letterheads, matching lined peel-and-seal envelopes, and 600gsm business cards with champagne gilded edges.",
+      "A complete unified identity concept illustrating executive correspondence. Features laser-guaranteed watermarked letterheads, foil-stamped presentation folders, and security-tinted peel-and-seal envelopes.",
+    isDemonstration: true,
   },
+
+  // 3. Packaging
+  {
+    id: "elysian-haute-parfumerie",
+    title: "Oud Royale Magnetic Rigid Presentation Box",
+    category: "Packaging",
+    categorySlug: "packaging",
+    image:
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Haute Parfumerie (Demonstration Concept)",
+    finishes: ["Champagne Gold Hot Foil", "Velvet Soft-Touch Film", "Concealed Neodymium Magnets"],
+    paperStock: "1800 GSM Heavyweight Industrial Greyboard wrapped in Fedrigoni Specialty Paper",
+    specs: [
+      { label: "Box Construction", value: "Rigid Book-Style Case" },
+      { label: "Closure", value: "Dual Neodymium Magnets" },
+      { label: "Insert", value: "Laser-cut EVA foam with black velvet flock" },
+      { label: "Dimensions", value: "220 × 160 × 65 mm" },
+    ],
+    description:
+      "A luxury packaging demonstration displaying book-style rigid box crafting. The interior features a recessed, velvet-flocked shock-absorbent foam cradle designed for fragile perfume vessels.",
+    isDemonstration: true,
+  },
+  {
+    id: "luxe-boutique-shopping-bag",
+    title: "Maison Blanc Debossed Luxury Shopping Bags",
+    category: "Packaging",
+    categorySlug: "packaging",
+    image:
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Fashion Retail Atelier (Demonstration Concept)",
+    finishes: ["Matte Lamination", "Hot Foil Stamped Emblem", "Woven Cotton Ribbon Handles"],
+    paperStock: "230 GSM Bleached Art Paper with 400 GSM Base and Rim Reinforcements",
+    specs: [
+      { label: "Bag Size", value: "320 × 260 × 120 mm" },
+      { label: "Handle Type", value: "25mm Knotted Grosgrain Ribbon" },
+      { label: "Load Capacity", value: "Tested up to 7.5 kg" },
+    ],
+    description:
+      "A demonstration of high-durability luxury retail shopping bags. Includes reinforced cardboard turn-top rims, heavyweight bottom plates, and hot gold foil stamped brand typography.",
+    isDemonstration: true,
+  },
+
+  // 4. Marketing Materials
   {
     id: "belgravia-residences-lookbook",
-    title: "The Palm Residences Architecture Lookbook",
-    category: "Marketing Collateral",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
-    clientType: "Prime Real Estate Developer, Palm Jumeirah",
-    finishes: ["PUR Lay-Flat Binding", "Anti-Scratch Matte", "Selective High-Gloss 3D Spot UV"],
-    paperStock: "Hardcase 3mm Board Cover with 170gsm Silk Art Interior (124 Pages)",
+    title: "Palm Jumeirah Ultra-Luxury Architecture Lookbook",
+    category: "Marketing Materials",
+    categorySlug: "marketing-materials",
+    image:
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507842229451-79b1be886a20?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Prime Real Estate Developer (Demonstration Concept)",
+    finishes: ["PUR Perfect Lay-Flat Binding", "Anti-Scratch Matte Cover", "3D Spot UV Accents"],
+    paperStock: "350 GSM Cover with 170 GSM Silk Art Interior (96 Pages)",
+    specs: [
+      { label: "Binding", value: "PUR Square Spine Adhesive" },
+      { label: "Page Count", value: "96 Pages + 4pp Cover" },
+      { label: "Color Standard", value: "ISO 12647-2 Certified CMYK" },
+    ],
     description:
-      "A flagship architectural coffee-table portfolio showcasing beachfront penthouses. Printed with Heidelberg 6-color litho presses with calibrated ISO proofs for faithful interior rendering.",
+      "A comprehensive real estate marketing monograph demonstration. Bound with PUR flexible adhesive allowing flat opening to display high-resolution architectural panoramic renders without gutter clipping.",
+    isDemonstration: true,
   },
+
+  // 5. Stickers & Labels
+  {
+    id: "botanica-gold-labels",
+    title: "Botanica Organic Skincare Foil Labels & Seals",
+    category: "Stickers & Labels",
+    categorySlug: "stickers-labels",
+    image:
+      "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Organic Cosmetics Brand (Demonstration Concept)",
+    finishes: ["Hot Gold Stamped Linework", "Matte Water-Resistant Overlaminate", "Contour Die-Cut"],
+    paperStock: "Waterproof White Polypropylene BOPP with High-Tack Adhesive",
+    specs: [
+      { label: "Adhesive Type", value: "Permanent Water & Oil Resistant" },
+      { label: "Form", value: "Supplied on Roll (40mm Core)" },
+      { label: "Die-Cut", value: "Custom Curved Contours" },
+    ],
+    description:
+      "Demonstration roll labels formulated for glass cosmetic bottles and jars exposed to humid bathrooms and oily serums. Precision hot foil borders paired with ultra-matte protective film.",
+    isDemonstration: true,
+  },
+
+  // 6. Signage
   {
     id: "marina-sky-reception-sign",
-    title: "Marina Sky Tower 3D Illuminated Channel Signage",
-    category: "Large Format & Signage",
-    image: "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=800&q=80",
-    clientType: "Commercial Tower Lobby, Dubai Marina",
-    finishes: ["Mirror Gold Titanium PVD Stainless Steel", "3000K Warm Halo LED Glow", "Concealed Standoff Mounts"],
-    paperStock: "Grade 304 Titanium-Coated Stainless Steel with Cast Acrylic Diffuser",
+    title: "Vertex Tower 3D Illuminated Reception Lobby Sign",
+    category: "Signage",
+    categorySlug: "signage",
+    image:
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Commercial Tower Headquarters (Demonstration Concept)",
+    finishes: ["Mirror Gold PVD Stainless Steel", "3000K Warm Halo LED Illumination", "Concealed Standoff Mounts"],
+    paperStock: "Grade 316 Marine Stainless Steel with Cast Acrylic Light Diffuser",
+    specs: [
+      { label: "Installation Span", value: "3.8 Meters Wide" },
+      { label: "Letter Depth", value: "50mm Fabricated 3D Returns" },
+      { label: "Lighting", value: "Low-Voltage 12V Samsung Warm LEDs" },
+    ],
     description:
-      "Architectural lobby installation measuring 4.2 meters in width. Features laser-profiled channel letters with seamless return welding and precision rear halo illumination.",
+      "A full-scale architectural signage demonstration illustrating fabricated stainless steel channel letters with seamless edge welding and rear halo lighting for executive corporate receptions.",
+    isDemonstration: true,
   },
+
+  // 7. Promotional Products
   {
-    id: "al-nahyan-royal-wedding-suite",
-    title: "The Celestial Gala Acrylic & Velvet Invitation Suite",
-    category: "Premium Invitations",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-    clientType: "VIP Family Wedding, Emirates Palace Abu Dhabi",
-    finishes: ["Laser Etched Crystal Acrylic", "Silk Screen Gold Infill", "Handmade Royal Wax Seal"],
-    paperStock: "3mm Optical Cast Acrylic paired with French Silk Velvet Folio Box",
+    id: "zenith-executive-gift-set",
+    title: "Zenith Executive Onboarding VIP Gift Set",
+    category: "Promotional Products",
+    categorySlug: "promotional-products",
+    image:
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=80",
+    ],
+    clientType: "Technology Enterprise (Demonstration Concept)",
+    finishes: ["Matte Black Powder Coat Laser Etch", "Blind Debossing on PU Leather", "Foil Stamped Box"],
+    paperStock: "1400 GSM Rigid Black Box with Laser-Cut High-Density EVA Foam Tray",
+    specs: [
+      { label: "Kit Contents", value: "Vacuum Bottle, A5 Journal, Rollerball Pen, 10,000mAh Powerbank" },
+      { label: "Branding Method", value: "Coordinated Fiber Laser Engraving & Debossing" },
+      { label: "Packaging", value: "Custom Matte Black Magnetic Box" },
+    ],
     description:
-      "An opulent wedding ensemble featuring intricate Thuluth Arabic calligraphy screen-printed in metallic gold on beveled acrylic, cushioned within an emerald green velvet presentation folio.",
-  },
-  {
-    id: "aurora-skincare-retail-cartons",
-    title: "Aurora Botanicals Botanical Cosmetic Cartons",
-    category: "Luxury Packaging",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
-    clientType: "Clean Luxury Skincare Brand, Dubai",
-    finishes: ["Matte Velvet Touch", "Embossed Foliage Pattern", "Rose Gold Foil Accent"],
-    paperStock: "380gsm FSC-Certified Virgin Folding Boxboard (FBB)",
-    description:
-      "Sustainable luxury folding cartons engineered with crash-lock bottoms and precision interior tuck closures. The tactile debossed botanical pattern creates instant sensory appeal at retail shelves.",
-  },
-  {
-    id: "gitex-quantum-tech-booth",
-    title: "GITEX Global Exhibition Grand Fabric Tension Backdrop",
-    category: "Large Format & Signage",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
-    clientType: "Enterprise AI & Cloud Provider",
-    finishes: ["Dye-Sublimation Ultra-Vibrant Inks", "Seamless Tension Lock System", "Integrated LED Edge Bars"],
-    paperStock: "260gsm Fire-Retardant Blockout Stretch Polyester",
-    description:
-      "An imposing 12m x 4m seamless tension fabric curved wall for Dubai World Trade Centre. Printed in a single run with flawless color registration under bright exhibition lights.",
-  },
-  {
-    id: "ateliers-du-cuir-business-cards",
-    title: "Ateliers Du Cuir Duplex Letterpress Cards",
-    category: "Corporate Stationery",
-    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80",
-    clientType: "Bespoke Leather Goods House, Dubai Mall Fashion Avenue",
-    finishes: ["Deep Vintage Letterpress Deboss", "Champagne Gold Foiling", "Black Painted Edges"],
-    paperStock: "700gsm 100% Cotton Somerset Board",
-    description:
-      "Extreme-depth relief impression achieved using vintage Heidelberg windmill platens. The ultra-heavy cotton substrate absorbs deep debossing without back-side bruising.",
+      "A demonstration concept of coordinated corporate merchandise. Combines precision laser-etched insulated drinkware with debossed notebooks and matching weighted writing instruments.",
+    isDemonstration: true,
   },
 ];
