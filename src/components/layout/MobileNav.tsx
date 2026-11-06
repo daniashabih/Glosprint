@@ -52,19 +52,21 @@ export default function MobileNav() {
 
       {/* Slide-out Drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-[#080808] border-l border-[#2B2B2B] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 z-50 h-full w-[88%] max-w-sm bg-[#080808] border-l border-[#2B2B2B] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Top Header of Drawer */}
-        <div className="flex items-center justify-between p-5 bg-[#101010] border-b border-[#2B2B2B]">
-          <Logo size="sm" />
+        <div className="flex items-center justify-between gap-3 px-5 py-4 min-h-[72px] bg-[#101010] border-b border-[#2B2B2B]">
+          <div className="flex items-center min-w-0">
+            <Logo />
+          </div>
           <button
             onClick={() => {
               setIsOpen(false);
               setShowCategoryDrawer(false);
             }}
-            className="p-2 text-[#B3B3B3] hover:text-white transition-colors cursor-pointer"
+            className="p-2 text-[#B3B3B3] hover:text-white transition-colors cursor-pointer shrink-0"
             aria-label="Close Menu"
           >
             <X className="w-6 h-6" />
