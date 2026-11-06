@@ -57,8 +57,8 @@ export default function MobileNav() {
         }`}
       >
         {/* Top Header of Drawer */}
-        <div className="flex items-center justify-between gap-3 px-5 py-4 min-h-[72px] bg-[#101010] border-b border-[#2B2B2B]">
-          <div className="flex items-center min-w-0">
+        <div className="flex items-center justify-between gap-3 px-5 py-3.5 min-h-[76px] bg-[#101010] border-b border-[#2B2B2B] overflow-visible">
+          <div className="logo-container">
             <Logo />
           </div>
           <button

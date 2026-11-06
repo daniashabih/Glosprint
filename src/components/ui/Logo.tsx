@@ -14,17 +14,16 @@ export default function Logo({
   return (
     <Link
       href="/"
-      className={`inline-flex items-center justify-start shrink-0 leading-none transition-opacity hover:opacity-90 ${className}`}
+      className={`logo-container transition-opacity hover:opacity-90 ${className}`.trim()}
       aria-label="GLOSPRINT — Premium Printing & Creative Branding"
     >
       <Image
         src="/logo/glosprint-logo.png"
         alt="GLOSPRINT — Premium Printing & Creative Branding"
-        width={807}
-        height={133}
+        width={866}
+        height={288}
         priority={priority}
         unoptimized
-        className="glosprint-logo-img block w-auto h-[38px] md:h-[44px] max-w-full object-contain select-none"
       />
     </Link>
   );

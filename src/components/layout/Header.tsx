@@ -58,10 +58,10 @@ export default function Header() {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4 min-h-[72px] md:min-h-[84px] py-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
+        <div className="flex items-center justify-between gap-4 min-h-[76px] md:min-h-[88px] py-2.5 overflow-visible">
           {/* Logo Container */}
-          <div className="flex items-center justify-start shrink-0">
+          <div className="logo-container shrink-0">
             <Logo priority />
           </div>
 
